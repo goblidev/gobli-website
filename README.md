@@ -84,15 +84,16 @@ archive/                old assets kept for reference, do not deploy
 No CDN is used for any of the above. The **only** external network request the
 page makes is to Google Fonts (Space Grotesk / Inter / JetBrains Mono).
 
-## Before going live — REPLACE_ME checklist
+## Deployment
 
-Search every page for `REPLACE_ME` to find every placeholder:
+Hosted on GitHub Pages (`gh-pages`-free legacy build, serving from `master`
+root) at the repo `goblidev/gobli-website`. Custom domain
+`gobli.io` is registered with Cloudflare and set as the Pages `cname`; the
+`CNAME` file at the repo root is what GitHub Pages reads to route it (don't
+delete it). The OG/canonical/twitter meta block in `index.html`'s `<head>`
+already points at `https://gobli.io/`.
 
-- `REPLACE_ME_DOMAIN` — the OG/canonical/twitter meta block in `index.html`'s
-  `<head>`. Swap for the real domain once it's purchased.
-
-The Telegram links (`https://t.me/goblidev`) are the real invite link and
-don't need replacing.
+The Telegram links (`https://t.me/goblidev`) are the real invite link.
 
 ## The hero component
 
