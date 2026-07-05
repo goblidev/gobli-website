@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gobli - Self-Hosted Solana Sniper</title>
+<meta name="description" content="Gobli is a synthetic goblin sniper for Solana token launches. Paste a contract address in Telegram, fire through Jupiter in under 500ms. Self-hosted, your keys never leave your machine.">
+<meta name="theme-color" content="#0b0f0c">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- REPLACE_ME_DOMAIN: swap for the real domain after purchase -->
+<link rel="canonical" href="https://REPLACE_ME_DOMAIN/">
+<meta property="og:title" content="Gobli — Self-Hosted Solana Sniper">
+<meta property="og:description" content="You paste it. I snipe it. A synthetic goblin sniper for Solana token launches. Self-hosted. Your keys never leave your machine.">
+<meta property="og:image" content="https://REPLACE_ME_DOMAIN/assets/og_banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://REPLACE_ME_DOMAIN/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://REPLACE_ME_DOMAIN/assets/og_banner.jpg">
+<!-- The only external network request on this page: Google Fonts. Three.js, the QR
+     generator, and every other script are vendored locally in assets/vendor/ — no CDN. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#hero"><img src="assets/gobli_logo.png" alt="Gobli, home" width="40" height="40"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">Source Included</a>
+      <a href="#products">Products</a>
+      <a href="#trust">Self-Hosted</a>
+      <a href="#proof">Proof</a>
+      <a href="#faq">Before You Snipe</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="#products">Get the Sniper</a>
+      <details class="nav-mobile">
+        <summary>Menu</summary>
+        <div class="nav-mobile-panel">
+          <a href="#how">Source Included</a>
+          <a href="#products">Products</a>
+          <a href="#trust">Self-Hosted</a>
+          <a href="#proof">Proof</a>
+          <a href="#faq">Before You Snipe</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero" aria-labelledby="hero-heading">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">SOLANA &middot; SUB-500MS EXECUTION</p>
+
+    <div class="hero-stage-wrap">
+      <div class="gobli-stage" id="gobliStage">
+        <div class="gobli-glow"></div>
+        <div class="gobli-floor"></div>
+        <canvas class="gobli-canvas" id="gobliCanvas"
+          aria-label="Gobli, a hooded goblin that watches your cursor"></canvas>
+        <p class="gobli-loading" id="gobliLoading">summoning goblin&hellip;</p>
+      </div>
+    </div>
+
+    <h1 id="hero-heading">You paste it.<br>I snipe it.</h1>
+    <p class="lede">A synthetic goblin who eats token launches in under 500ms, so you stop fat-fingering
+      the buy while the candle runs without you. Self-hosted. Your keys never leave your machine. I wouldn't want them anyway.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#products">Put me to work, $199</a>
+      <a class="btn btn-ghost" href="https://t.me/goblivillage" target="_blank" rel="noopener">Watch the trenches</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOURCE INCLUDED ===================== -->
+<section class="opensource" id="how" aria-labelledby="how-heading">
+  <div class="wrap">
+    <div class="opensource-band">
+      <img class="opensource-art" src="assets/pose_source_included.png" alt="Gobli holding a wooden sign that says Source Included" loading="lazy" decoding="async">
+      <div class="opensource-copy">
+        <p class="eyebrow">No black box</p>
+        <h2 id="how-heading">Read the code. Then run it.</h2>
+        <p>Buy the Sniper and you get the full source, not a sealed binary. Read every line before it
+          touches your wallet, or pay someone you trust to do it for you. Nothing here runs on faith.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="products" id="products" aria-labelledby="products-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The arsenal</p>
+      <h2 id="products-heading">Pick your weapon</h2>
+      <p>One tool is live. Two more are coming soon.</p>
+    </div>
+
+    <div class="cards">
+      <!-- Card 1 — LIVE -->
+      <article class="card is-live">
+        <div class="card-art-wrap">
+          <img class="card-art" src="assets/pose_sniper.png" alt="Gobli holding a sniper rifle" width="480" height="480" loading="lazy" decoding="async">
+        </div>
+        <span class="card-kicker">Manual</span>
+        <h3>Gobli Sniper</h3>
+        <p class="price">$199 <span style="color:var(--bone-dim);font-size:.7em">one-time</span></p>
+        <p class="desc">Paste a contract in Telegram. I buy it through Jupiter in under 500ms and hand you
+          one-tap preset sells. No chart-staring. No fat fingers.</p>
+        <ul class="specs">
+          <li>Helius RPC</li>
+          <li>Jupiter swaps</li>
+          <li>Telegram-triggered</li>
+          <li>Preset sell buttons</li>
+          <li>Self-hosted (your VPS, your keys)</li>
+        </ul>
+        <div class="card-cta">
+          <button class="btn btn-primary" style="width:100%" type="button" data-open-drawer>
+            Snipe with Gobli, $199
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 2 — COMING SOON -->
+      <article class="card is-locked">
+        <span class="badge-locked">Soon&trade;</span>
+        <div class="card-art-wrap">
+          <img class="card-art" src="assets/pose_shadow.png" alt="Gobli dressed as a detective, holding a magnifying glass" width="480" height="480" loading="lazy" decoding="async">
+        </div>
+        <span class="card-kicker">Tracker</span>
+        <h3>Gobli Shadow</h3>
+        <p class="price">$99 <span style="color:var(--bone-dim);font-size:.7em">one-time</span></p>
+        <p class="desc">Paste any wallet in Telegram. I watch it 24/7 and ping you the second it buys, sells,
+          or swaps what token, how much, which DEX. No keys. No funds at risk. I only watch.</p>
+        <ul class="specs">
+          <li>Helius webhooks</li>
+          <li>Buy / sell / swap alerts</li>
+          <li>Telegram-triggered</li>
+          <li>Read-only, never holds your keys</li>
+          <li>Self-hosted (your VPS, your Helius key)</li>
+        </ul>
+        <div class="card-cta">
+          <button class="btn btn-ghost" style="width:100%" type="button" disabled>Shadow with Gobli, $99</button>
+          <p class="locked-link" style="margin-top:10px">
+            <a href="https://t.me/goblidev" target="_blank" rel="noopener">Join the Telegram to get it first &rarr;</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3 — COMING SOON -->
+      <article class="card is-locked">
+        <span class="badge-locked">Soon&trade;</span>
+        <div class="card-art-wrap">
+          <img class="card-art" src="assets/pose_mirror.png" alt="Gobli holding a sniper rifle while checking a hand mirror" width="480" height="480" loading="lazy" decoding="async">
+        </div>
+        <span class="card-kicker">Auto</span>
+        <h3>Gobli Mirror</h3>
+        <p class="price">$299 <span style="color:var(--bone-dim);font-size:.7em">one-time</span></p>
+        <p class="desc">Drop a smart-money wallet in Telegram. I watch it in real time and copy every buy and
+          sell from your own wallet, sized to your rules, filtered for rugs, landed through Jupiter. No
+          per-trade fees. No handing your keys to a stranger.</p>
+        <ul class="specs">
+          <li>transactionSubscribe detection</li>
+          <li>Auto buy + proportional sell</li>
+          <li>Sizing + risk caps + honeypot filter</li>
+          <li>Self-hosted, your keys never leave your VPS</li>
+          <li>No per-trade cut (unlike GMGN / Trojan / BonkBot)</li>
+        </ul>
+        <div class="card-cta">
+          <button class="btn btn-ghost" style="width:100%" type="button" disabled>Mirror Smart Money, $299</button>
+          <p class="locked-link" style="margin-top:10px">
+            <a href="https://t.me/goblidev" target="_blank" rel="noopener">Join the Telegram to get it first &rarr;</a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAND ===================== -->
+<section class="trust" id="trust" aria-labelledby="trust-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why self-hosted</p>
+      <h2 id="trust-heading">No custody. No middleman. No trust required.</h2>
+      <p>Most crypto tools want your keys or your funds. Here's exactly why this one doesn't.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon" aria-hidden="true">KEY</div>
+        <h3>Your keys stay on your machine</h3>
+        <p>Gobli runs on your own VPS. Private keys never touch our servers, because we don't have any.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon" aria-hidden="true">0×</div>
+        <h3>No custody, no middleman</h3>
+        <p>I never hold your funds at any point. You sign, you send, you sell.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon" aria-hidden="true">DOC</div>
+        <h3>Open setup guide included</h3>
+        <p>Every step from VPS to first snipe is documented. Nothing hidden, nothing assumed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROOF ===================== -->
+<section class="proof" id="proof" aria-labelledby="proof-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Receipts</p>
+      <h2 id="proof-heading">Gobli, actually sniping</h2>
+      <p>No script, no cuts. One take, sped up 2x, sound off. Here's the part that matters: how fast
+        the buy actually lands on-chain.</p>
+    </div>
+    <div class="proof-box">
+      <video class="proof-video" src="assets/proof_snipe.mp4" poster="assets/proof_thumbnail.jpg?v=3" controls playsinline preload="metadata"></video>
+      <div class="proof-timeline">
+        <div class="proof-stamp">
+          <span class="proof-label">Contract sent in Telegram</span>
+          <span class="proof-time">21:50:50</span>
+        </div>
+        <span class="proof-arrow" aria-hidden="true">&rarr;</span>
+        <div class="proof-stamp">
+          <span class="proof-label">Buy confirmed on-chain</span>
+          <span class="proof-time">21:50:50</span>
+        </div>
+      </div>
+      <div class="proof-notes">
+        <p><strong>This run is the floor, not the ceiling.</strong> No VPS, recorded over a home
+          connection nowhere near a Helius data center, on Helius's free tier instead of the paid
+          Developer tier. Every one of those costs speed, and this is what Gobli does anyway.</p>
+        <p>The contract address hit Telegram at <code>21:50:50</code>, and the buy was already
+          confirmed on Solana at <code>21:50:50</code>, same second, start to finish.</p>
+        <p>If Telegram itself looks a beat slow to render in the video, that's Telegram's UI catching
+          up, not Gobli. The only clock that matters is the blockchain's, and that's the one
+          timestamped above.</p>
+        <p>Put the Sniper on a VPS next to Helius's infrastructure with the Developer tier RPC, the
+          setup it's actually built for, and it gets faster than what you're watching here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-heading">Before You Snipe</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do you ever see my private key?</summary>
+        <p class="faq-a">Never. Gobli is self-hosted and runs on your own VPS. Your keys stay on your
+          machine.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is Gobli self-hosted?</summary>
+        <p class="faq-a">Because your wallet should stay under your control. We don't custody funds,
+          store keys, or act as a middleman.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why do you only accept crypto?</summary>
+        <p class="faq-a">Crypto is faster and has no borders. Banks can block, delay, or flag
+          payments depending on your country, and that's not a problem we want between you and your
+          purchase. SOL, ETH and BTC land directly, no middleman, no waiting.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is $199 one-time cheaper than the "free" bots?</summary>
+        <p class="faq-a">Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every
+          transaction, that's ~2% per trade, buy and sell. Cycle just $10k through positions and
+          you've already paid $200. Gobli costs $199. Once. Forever.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will there be more Gobli tools?</summary>
+        <p class="faq-a">Yes. More tools are already in development and will be released over time.
+          Early supporters will hear about them first.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why are you selling the sniper if it works?</summary>
+        <p class="faq-a">Nobody asks a shovel company why they don't mine gold themselves. Same here.
+          Gobli still requires you to stay active and put your own capital at risk.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is Gobli AI-generated?</summary>
+        <p class="faq-a">Because Gobli is designed to be a living digital mascot. AI lets us create new
+          content quickly while keeping the character consistent. The goal here is the Sniper, not a
+          mascot studio, so we're not burning time or budget on hand-drawn art for something that isn't
+          concretely part of the business.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I need help?</summary>
+        <p class="faq-a">Support is available through our Telegram.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a class="footer-brand" href="#hero">
+        <img src="assets/gobli_logo.png" alt="Gobli, home" width="48" height="48" loading="lazy" decoding="async">
+        <span>Gobli</span>
+      </a>
+      <p class="footer-tagline">Self-hosted Solana tools.<br>Your keys. Your control.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="#how">Source Included</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#trust">Self-Hosted</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#faq">Before You Snipe</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Contact</h4>
+      <ul class="footer-links footer-contact-list">
+        <li class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <a href="https://t.me/goblidev" target="_blank" rel="noopener">Telegram</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <h4 class="footer-subhead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Support</h4>
+      <ul class="footer-links">
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== BUY POPUP ===================== -->
+<div class="drawer-overlay" id="drawerOverlay">
+  <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" id="drawer">
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="Close">&times;</button>
+    <h2 id="drawerTitle">Snipe with Gobli</h2>
+    <p class="drawer-sub">$199 one-time &middot; message us to buy</p>
+    <p class="after-note">Tell me you want the Sniper and I'll get you sorted. No forms, no
+      waiting on a support ticket.</p>
+    <a class="btn btn-primary" style="width:100%;margin-bottom:18px" href="https://t.me/goblidev" target="_blank" rel="noopener">Message us on Telegram</a>
+    <p class="trust-note">Gobli is self-hosted software. We will never DM you first, never ask for your
+      seed phrase, never ask you to import a wallet.</p>
+  </div>
+</div>
+
+<script type="module">
+/* =====================================================================
+   GOBLI HEAD — lifted verbatim from gobli_hero_full.html (the full-body
+   model revision) per the build brief. Every line below this banner down
+   to `window.__gobliReady = ...` is unchanged from the tested source,
+   except the additive lines (marked) that hide the "summoning goblin…"
+   loading caption once the GLB loads, or surface a load error.
+   Do not retune the CONFIG values — they were measured against the model.
+   ===================================================================== */
+import * as THREE from './assets/vendor/three.module.js';
+import { GLTFLoader } from './assets/vendor/GLTFLoader.js';
+import { RoomEnvironment } from './assets/vendor/RoomEnvironment.js';
+
+// ===================== GOBLI HEAD — config =====================
+// Updated to the full-body model (gobli_full.glb) and its re-measured
+// tracking range, per the tested gobli_hero_full.html reference.
+const CONFIG = {
+  modelURL: './assets/gobli_full.glb',
+  baseYaw:  -Math.PI/2,   // model faces camera at this Y rotation (measured)
+  yawRange:  0.42,        // max left/right turn toward cursor (rad ~24deg)
+  pitchRange:0.12,        // max up/down (rad ~7deg)
+  ease:      0.075,       // cursor follow smoothing (lower = lazier)
+  idleAmp:   0.05,        // idle sway amplitude (rad) when cursor still
+  idleSpeed: 0.7,         // idle sway speed
+  bobAmp:    0.012,       // vertical breathing of the model (world units)
+  camZ:      3.0, fov: 32, fit: 1.30
+};
+// ==============================================================
+
+const stage  = document.getElementById('gobliStage');
+const canvas = document.getElementById('gobliCanvas');
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(CONFIG.fov, 1, 0.1, 100);
+camera.position.set(0,0,CONFIG.camZ);
+
+// environment (soft reflections for PBR + eye catchlights)
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+// lighting rig — key (white), rim (goblin green), fill (hoodie purple)
+scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+const key = new THREE.DirectionalLight(0xffffff, 1.25); key.position.set(2.2,2.6,3); scene.add(key);
+const rim = new THREE.DirectionalLight(0x9bd75a, 0.7);  rim.position.set(-3,1.2,-2);  scene.add(rim);
+const fill= new THREE.DirectionalLight(0x7a4ddb, 0.45); fill.position.set(-2,-1.4,2);  scene.add(fill);
+
+const pivot = new THREE.Group(); scene.add(pivot);
+let model=null, modelBaseY=0;
+
+// --- additive: defer the ~3.5MB model fetch until the browser is idle, so it
+// doesn't compete with fonts/three.module.js/first paint for bandwidth on
+// load — same pattern already used for donate.html's (larger) heart model.
+// Falls back to a short timeout on browsers without requestIdleCallback
+// (Safari). The loader callbacks themselves are unchanged from the tested
+// source below. ---
+function loadModel(){
+new GLTFLoader().load(CONFIG.modelURL, (gltf)=>{
+  const m = gltf.scene;
+  const box = new THREE.Box3().setFromObject(m);
+  const c = box.getCenter(new THREE.Vector3());
+  m.position.sub(c);                                   // center at origin
+  const size = box.getSize(new THREE.Vector3());
+  m.scale.setScalar(CONFIG.fit / Math.max(size.x,size.y,size.z));
+  pivot.add(m);
+  pivot.rotation.y = CONFIG.baseYaw;
+  modelBaseY = pivot.position.y;
+  model = pivot;
+  // --- additive: hide the loading caption once the head is in the scene.
+  // Inline style, not the `hidden` attribute — `.gobli-loading{display:flex}`
+  // below is an author-origin rule with the same specificity as the
+  // browser's built-in `[hidden]{display:none}`, and author rules win that
+  // tie, so `.hidden = true` alone silently does nothing. Inline style
+  // always wins regardless. ---
+  const loadingEl = document.getElementById('gobliLoading');
+  if (loadingEl) loadingEl.style.display = 'none';
+  // --- end additive ---
+}, undefined, (e)=>{
+  console.error('GLB load error', e);
+  // --- additive: surface the file://-vs-http:// footgun directly in the UI ---
+  const loadingEl = document.getElementById('gobliLoading');
+  if (loadingEl) loadingEl.textContent = 'gobli failed to load, serve over http://, not file://';
+  // --- end additive ---
+});
+}
+if (window.requestIdleCallback) {
+  requestIdleCallback(loadModel, { timeout: 2000 });
+} else {
+  setTimeout(loadModel, 200);
+}
+// --- end additive ---
+
+// pointer state (-1..1 across the stage), eased
+let tx=0,ty=0,cx=0,cy=0,lastMove=performance.now();
+function onMove(e){
+  const r = stage.getBoundingClientRect();
+  tx = Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(r.width/2)));
+  ty = Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(r.height/2)));
+  lastMove = performance.now();
+}
+window.addEventListener('mousemove', onMove, {passive:true});
+window.addEventListener('mouseleave', ()=>{tx=0;ty=0;});
+window.addEventListener('touchmove', e=>{ if(e.touches[0]) onMove(e.touches[0]); }, {passive:true});
+
+function resize(){
+  const r = stage.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio||1, 2);
+  renderer.setPixelRatio(dpr);
+  renderer.setSize(r.width, r.height, false);
+  camera.aspect = r.width/r.height; camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(stage); resize();
+
+// Skip the render/animation work while the canvas is scrolled off-screen —
+// a continuous WebGL draw call costs real GPU/CPU even when invisible, and
+// on mobile that competes with scroll compositing. Still tick the rAF chain
+// so it resumes the instant the hero scrolls back into view.
+let heroVisible = true;
+new IntersectionObserver((entries)=>{ heroVisible = entries[0].isIntersecting; }, {threshold:0}).observe(stage);
+
+const clock = new THREE.Clock();
+function tick(){
+  if(!heroVisible){ requestAnimationFrame(tick); return; }
+  const t = clock.getElapsedTime();
+  cx += (tx-cx)*CONFIG.ease;
+  cy += (ty-cy)*CONFIG.ease;
+  if(model){
+    if(reduce){
+      model.rotation.y = CONFIG.baseYaw;
+      model.rotation.x = 0;
+    } else {
+      const idle = (performance.now()-lastMove > 1400);
+      const sway = idle ? Math.sin(t*CONFIG.idleSpeed)*CONFIG.idleAmp : 0;
+      model.rotation.y = CONFIG.baseYaw + cx*CONFIG.yawRange + sway;
+      model.rotation.x = cy*CONFIG.pitchRange;
+      model.position.y = modelBaseY + Math.sin(t*1.1)*CONFIG.bobAmp; // breathing
+    }
+  }
+  renderer.render(scene,camera);
+  requestAnimationFrame(tick);
+}
+tick();
+window.__gobliReady = ()=> !!model;
+
+/* =====================================================================
+   Site interactions: buy popup (focus trap, ESC to close, click-outside).
+   ===================================================================== */
+
+const overlay  = document.getElementById('drawerOverlay');
+const drawerEl = document.getElementById('drawer');
+const closeBtn = document.getElementById('drawerClose');
+
+let lastFocused = null;
+
+function onKeydown(e){
+  if (e.key === 'Escape') { closeDrawer(); return; }
+  if (e.key === 'Tab') {
+    const focusables = drawerEl.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+    if (!focusables.length) return;
+    const first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+}
+
+function openDrawer(){
+  lastFocused = document.activeElement;
+  overlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  closeBtn.focus();
+  document.addEventListener('keydown', onKeydown);
+}
+function closeDrawer(){
+  overlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', onKeydown);
+  if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+}
+
+document.querySelectorAll('[data-open-drawer]').forEach(btn => btn.addEventListener('click', openDrawer));
+closeBtn.addEventListener('click', closeDrawer);
+overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDrawer(); });
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>
