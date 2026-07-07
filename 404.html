@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gobli</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:#0b0f0c;color:#e7f0e0;font-family:system-ui,sans-serif;text-align:center;padding:24px}
+  a{color:#9bd75a}
+</style>
+</head>
+<body>
+  <!-- GitHub Pages has no server-side router. index.html's nav.js writes
+       clean-looking paths like /self-hosted into the address bar for its
+       in-page sections, but a direct visit, refresh, or shared link to one
+       of those paths has no real file to serve - it lands here. Stash the
+       requested path and bounce to index.html, which reads it back out on
+       load and scrolls to the matching section. -->
+  <p>Redirecting&hellip; <a href="/">click here if nothing happens</a>.</p>
+  <script>
+    sessionStorage.setItem('gobli-redirect-path', location.pathname);
+    location.replace('/');
+  </script>
+</body>
+</html>
