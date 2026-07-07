@@ -438,6 +438,7 @@ body{
 .lp-verify li::before{content:'>';position:absolute;left:0;color:var(--green-soft);font-family:var(--font-mono);font-weight:700}
 .lp-verify li strong{color:var(--bone);font-weight:700}
 .lp-signoff{font-family:var(--font-mono);color:var(--green-soft);font-size:.85rem;margin-top:20px;display:block}
+.lp-verify .btn{white-space:normal;text-align:center;max-width:100%}
 
 @media (max-width:620px){
   .lp-services{padding:20px}
