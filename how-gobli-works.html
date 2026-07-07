@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Gobli Works | Gobli</title>
+<meta name="description" content="The honest version of how Gobli works: where your key lives, what leaves your machine, what I check and what I don't. Self-hosted, non-custodial, one-time purchase.">
+<meta name="theme-color" content="#0b0f0c">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><img src="assets/gobli_logo.png" alt="Gobli, home" width="40" height="40"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#how">Source Included</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#trust">Self-Hosted</a>
+      <a href="how-gobli-works.html">How It Works</a>
+      <a href="index.html#faq">Before You Snipe</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="index.html#products">Get the Sniper</a>
+      <details class="nav-mobile">
+        <summary>Menu</summary>
+        <div class="nav-mobile-panel">
+          <a href="index.html#how">Source Included</a>
+          <a href="index.html#products">Products</a>
+          <a href="index.html#trust">Self-Hosted</a>
+          <a href="how-gobli-works.html">How It Works</a>
+          <a href="index.html#faq">Before You Snipe</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="legal-content" style="max-width:920px">
+    <a class="back-link" href="index.html">&larr; Back to Gobli</a>
+
+    <section class="lp-hero">
+      <div class="wrap">
+        <h1>You hold everything. I hold nothing.</h1>
+        <p class="lede">I'm a Solana sniper you run yourself. This page is the real account of how I work,
+          <strong>where your key lives, what leaves your machine, and what I check versus what I don't</strong>.
+          No marketing. If a claim here can't be traced to my actual code, it doesn't belong on this page,
+          and you can read the code to check.</p>
+      </div>
+    </section>
+
+    <section class="lp-claims wrap" aria-label="Claims at a glance">
+      <div class="lp-claims-grid">
+        <a class="lp-claim" href="#trust">
+          <span class="lp-claim-k">No server</span>
+          <span class="lp-claim-v">There's no Gobli server, no account, no database with your keys in it. You run me on your own box.</span>
+        </a>
+        <a class="lp-claim" href="#architecture">
+          <span class="lp-claim-k">Key stays put</span>
+          <span class="lp-claim-v">Your private key sits in one <code>.env</code> file, loads once, and only ever signs locally. Never transmitted.</span>
+        </a>
+        <a class="lp-claim" href="#trust">
+          <span class="lp-claim-k">$199 once &middot; 0% forever</span>
+          <span class="lp-claim-v">One purchase, no per-trade cut ever. The bots that hold your keys also take a cut of every trade.</span>
+        </a>
+        <a class="lp-claim" href="#tradeoffs">
+          <span class="lp-claim-k">Checks inform</span>
+          <span class="lp-claim-v">Rug and safety checks run alongside your buy and show as warnings. They never block it. I'd rather say so.</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== 01 TRUST MODEL ===================== -->
+    <section class="lp-section" id="trust">
+      <div class="wrap">
+        <div class="section-head" style="text-align:left;align-items:flex-start;margin-bottom:28px">
+          <p class="eyebrow">01 &mdash; The trust model</p>
+          <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem)">Most bots keep your wallet on their server. That's the problem.</h2>
+        </div>
+        <div class="lp-prose">
+          <p><strong>A Telegram bot that holds your keys is convenient right up until it isn't.</strong> One
+            breach on their end, and every customer's wallet drains at once. A server sitting on thousands of
+            private keys is the single juiciest target in crypto.</p>
+
+          <p>I don't have that server. There is no Gobli account system, no hosted key vault, no database,
+            nothing of yours lives on my side, because there is no "my side." You rent a VPS, you run me on
+            it, and your key stays in a file only you can reach. <strong>There's no honeypot to steal from,
+            because I never built one.</strong> That's the actual security argument for self-hosting, not a
+            privacy nicety, the whole point.</p>
+
+          <h3>The other cost of custody</h3>
+          <p>The bots that hold your keys also take a cut of every trade, forever. <strong>BonkBot charges a
+            flat 1% on every trade. Banana Gun charges 1% on every sniped buy.</strong> I'm <strong>$199
+            once</strong>, and then 0%, on every trade, for as long as you run me.</p>
+
+          <div class="lp-callout">
+            <div class="lp-math">
+              $199 <span class="op">&divide;</span> 1% fee <span class="op">=</span> $19,900 in total volume<br>
+              before their fee alone catches up to my one-time price.
+            </div>
+            <p>That $19,900 is <em>total volume</em>, every buy and every sell, summed. Since that 1% gets
+              charged on both legs, it works out to roughly <strong>$10,000 of your own capital</strong> moved
+              through a single buy-and-sell cycle. After that one round trip, every trade you make through me
+              is free. The more you trade, the more lopsided the math gets, in your favor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 02 ARCHITECTURE ===================== -->
+    <section class="lp-section" id="architecture">
+      <div class="wrap">
+        <div class="section-head" style="text-align:left;align-items:flex-start;margin-bottom:28px">
+          <p class="eyebrow">02 &mdash; Architecture &amp; data flow</p>
+          <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem)">What leaves your machine, and what never does.</h2>
+        </div>
+        <div class="lp-prose">
+          <p>I talk to a handful of outside services to do my job. But there's a hard line your private key
+            never crosses. This is that line.</p>
+
+          <!-- SIGNATURE DIAGRAM -->
+          <div class="lp-diagram" role="img" aria-label="Trust-boundary diagram. Inside your VPS: the .env private key is read once at startup into a solders.Keypair held in memory, then used only to sign transactions locally. The private key never crosses the boundary. Only signed transactions and data requests leave, going out to Jupiter, Helius, and the read-only safety-data services Rugcheck, GoPlus and DexScreener.">
+            <div class="lp-zone lp-zone-inside">
+              <div class="lp-zone-label"><span class="lp-dot"></span> Your VPS &middot; you rent it, you own it</div>
+              <div class="lp-keyflow">
+                <div class="lp-node key">
+                  <div class="lp-node-t">.env</div>
+                  <div class="lp-node-d">Your private key. One file, one place.</div>
+                </div>
+                <div class="lp-arrow" aria-hidden="true">&rarr;</div>
+                <div class="lp-node">
+                  <div class="lp-node-t">solders.Keypair</div>
+                  <div class="lp-node-d">Read once at startup, held in memory.</div>
+                </div>
+                <div class="lp-arrow" aria-hidden="true">&rarr;</div>
+                <div class="lp-node">
+                  <div class="lp-node-t">sign_message()</div>
+                  <div class="lp-node-d">Signs transactions locally. Nothing else.</div>
+                </div>
+              </div>
+              <div class="lp-boundary-note">Your private key never crosses this line.</div>
+            </div>
+
+            <div class="lp-crossing">
+              &rarr; crosses the boundary: <b>signed transactions</b> &middot; <b>quote &amp; data requests</b> &rarr;
+            </div>
+
+            <div class="lp-zone">
+              <div class="lp-zone-label out"><span class="lp-dot out"></span> Outside services &middot; what I reach out to</div>
+              <div class="lp-services">
+                <div class="lp-svc">
+                  <div class="lp-svc-n">Jupiter</div>
+                  <div class="lp-svc-d">Aggregator API, I fetch a quote and a ready swap transaction.</div>
+                </div>
+                <div class="lp-svc">
+                  <div class="lp-svc-n">Helius</div>
+                  <div class="lp-svc-d">Priority-fee estimate, transaction simulation, and Sender for broadcast.</div>
+                </div>
+                <div class="lp-svc info">
+                  <div class="lp-svc-n">Rugcheck &middot; GoPlus &middot; DexScreener</div>
+                  <div class="lp-svc-d">Read-only safety data, liquidity, tax, holders, honeypot. Informational.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="lp-caption">Everything in the top zone happens on your box. Only the finished, signed
+            transaction and ordinary data requests ever leave it.</p>
+
+          <h3>Where your key lives</h3>
+          <p>Your wallet's private key lives in exactly one place: a <code>.env</code> file on your VPS. When
+            I start up, I read it once (<code>config.py</code>), turn it into a <code>solders.Keypair</code>
+            held in memory, and from then on I use it only to sign transactions locally,
+            <code>keypair.sign_message(...)</code>. The raw key is never sent anywhere, by me or to me.
+            Signing happens on your machine; only the finished, signed transaction goes out.</p>
+
+          <h3>Only you can talk to me</h3>
+          <p>I'm locked to a single Telegram chat, the <code>TELEGRAM_CHAT_ID</code> in your <code>.env</code>.
+            Every command checks that first, and any other chat is silently ignored. Telegram is a public app;
+            this is what makes the bot <em>yours</em> inside it.</p>
+
+          <h3>What a buy actually does</h3>
+          <p>Paste a mint address in Telegram, and here's the exact sequence, in order, because the order is
+            the point:</p>
+          <ol class="lp-sequence">
+            <li>You paste a <strong>mint address</strong> into Telegram.</li>
+            <li>I ask <strong>Jupiter</strong>'s aggregator for a quote and a swap transaction.</li>
+            <li>I ask <strong>Helius</strong> for a live priority-fee estimate (<code>getPriorityFeeEstimate</code>)&hellip;</li>
+            <li>&hellip;and <strong>simulate</strong> the transaction (<code>getComputeUnits</code>) to tune that fee.</li>
+            <li>I <strong>sign it locally</strong> with your key.</li>
+            <li>I send it through <strong>Helius Sender</strong>, staked, multi-region, skipping the public
+              mempool, with a plain-RPC fallback if that path fails.</li>
+            <li>I <strong>poll</strong> until it confirms.</li>
+            <li><span class="lp-concurrent">Concurrently,</span> I pull liquidity, tax, holder-concentration
+              and honeypot data from <strong>Rugcheck, GoPlus and DexScreener</strong> and print it on your
+              receipt. (Why that runs <em>alongside</em> and not <em>before</em> the buy is in section 03.)</li>
+          </ol>
+
+          <h3>The Setup Wizard, you don't have to trust me on it</h3>
+          <p>Getting your key into that <code>.env</code> file is the one genuinely scary moment, so I made it
+            inspectable. The Setup Wizard is a single local HTML file (<code>setup.html</code>). Open it and
+            view the source, <code>Ctrl+U</code>, it's small, and you'll see it plainly: no
+            <code>&lt;script src&gt;</code>, no external resources, and not one network call anywhere in it.
+            No <code>fetch</code>, no <code>XMLHttpRequest</code>, no <code>WebSocket</code>. The key you type
+            only ever touches a JavaScript variable and your browser's own save-file API
+            (<code>showSaveFilePicker</code> on Chromium, a plain download on Firefox and Safari). It writes
+            the file to your disk and talks to nobody. Don't take my word for it, read it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 03 TRADEOFFS ===================== -->
+    <section class="lp-section" id="tradeoffs">
+      <div class="wrap">
+        <div class="section-head" style="text-align:left;align-items:flex-start;margin-bottom:28px">
+          <p class="eyebrow">03 &mdash; Honest tradeoffs</p>
+          <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem)">Where I stop, stated plainly.</h2>
+        </div>
+        <div class="lp-prose">
+          <p>A page like this is worthless if it only lists strengths. Here's what I don't do, so nothing
+            reads as a hidden gotcha later.</p>
+
+          <div class="lp-tradeoffs">
+            <div class="lp-to">
+              <h3>Safety checks inform. They don't block.</h3>
+              <p>Rugcheck, GoPlus, liquidity and holder-concentration checks run <em>at the same time</em> as
+                your buy, not before it. The buy fires immediately; the warnings land on the confirmation
+                message right next to it. If a token's a rug, I'll tell you, but I'll already have bought it,
+                because you told me to. I'm fast execution, not a gatekeeper.</p>
+              <p>This is in my setup guide's Limitations section too. It's not new here, and it's not
+                something I'd rather you didn't notice.</p>
+            </div>
+
+            <div class="lp-to">
+              <h3>I sign what Jupiter hands me.</h3>
+              <p>When I build a swap, I sign the transaction Jupiter's API returns without independently
+                re-verifying its contents against the quote first. That's a deliberate choice for speed, made
+                with eyes open. The risk is narrow, it only bites if Jupiter's own infrastructure were ever
+                compromised, but it's real, and I'd rather name it than pretend I have zero attack surface.</p>
+            </div>
+
+            <div class="lp-to">
+              <h3>Positions live in memory.</h3>
+              <p>Take-profit, stop-loss and your open-position list are held in memory. Restart me and that
+                tracking resets. Your tokens are untouched, they're in your wallet, not in me, I just stop
+                watching them until you add them back. Worth knowing before a reboot catches you off guard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CLOSING ===================== -->
+    <section class="lp-section" style="border-bottom:none">
+      <div class="wrap">
+        <div class="lp-verify">
+          <p class="eyebrow">Verify it yourself</p>
+          <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-top:16px">None of this asks for your trust. It asks you to check.</h2>
+          <ul>
+            <li><strong>Read <code>setup.html</code></strong> before you type your key into it.</li>
+            <li><strong>Read the Limitations section</strong> of the setup guide.</li>
+            <li><strong>Run me on a box you rent</strong>, with a wallet you fund and control.</li>
+          </ul>
+          <span class="lp-signoff">code &gt; promises, this page just told you where the code stands.</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a class="footer-brand" href="index.html">
+        <img src="assets/gobli_logo.png" alt="Gobli, home" width="48" height="48" loading="lazy" decoding="async">
+        <span>Gobli</span>
+      </a>
+      <p class="footer-tagline">Self-hosted Solana tools.<br>Your keys. Your control.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="index.html#how">Source Included</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#trust">Self-Hosted</a></li>
+        <li><a href="how-gobli-works.html">How It Works</a></li>
+        <li><a href="index.html#faq">Before You Snipe</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Contact</h4>
+      <ul class="footer-links footer-contact-list">
+        <li class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <a href="https://t.me/goblidev" target="_blank" rel="noopener">Telegram</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <h4 class="footer-subhead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Support</h4>
+      <ul class="footer-links">
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="assets/nav.js"></script>
+</body>
+</html>

@@ -347,6 +347,101 @@ body{
   .donate-grid{grid-template-columns:1fr;max-width:420px;margin-inline:auto;gap:28px}
 }
 
+/* ===================== How It Works (lightpaper) ===================== */
+.lp-hero{padding:8px 0 40px;text-align:center}
+.lp-hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,5vw,3.2rem);
+  text-transform:uppercase;letter-spacing:-.02em;line-height:1.05;max-width:16ch;margin:0 auto 20px}
+.lp-hero .lede{color:var(--bone-dim);font-size:1.05rem;line-height:1.65;max-width:640px;margin:0 auto}
+.lp-hero .lede strong{color:var(--bone)}
+
+.lp-claims{padding:0 0 8px}
+.lp-claims-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.lp-claim{display:block;background:var(--bg-panel);border:2px solid var(--green-deep);
+  padding:20px 20px 22px;box-shadow:5px 5px 0 var(--green-deep);
+  transition:transform .12s ease,box-shadow .12s ease}
+/* .legal-content a:not(.back-link) force-underlines inline prose links; this
+   page wraps its content in .legal-content to reuse the back-link component,
+   so these block-card links need an equal-specificity override. */
+.legal-content a.lp-claim,.legal-content a.lp-claim:hover{text-decoration:none}
+.lp-claim:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--green-deep)}
+.lp-claim-k{font-family:var(--font-mono);font-size:.68rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--green-soft)}
+.lp-claim-v{display:block;margin-top:8px;color:var(--bone);font-size:.92rem;line-height:1.5}
+@media (max-width:880px){.lp-claims-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.lp-claims-grid{grid-template-columns:1fr}}
+
+.lp-section{padding:56px 0;border-top:2px solid var(--green-deep)}
+.lp-prose{max-width:720px;margin:0 auto}
+.lp-prose p{color:var(--bone-dim);font-size:.98rem;line-height:1.7;margin:0 0 18px}
+.lp-prose p strong{color:var(--bone);font-weight:700}
+.lp-prose h3{font-family:var(--font-display);font-weight:700;font-size:1.15rem;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--bone);margin:34px 0 12px}
+
+.lp-callout{background:var(--bg-panel2);border:2px solid var(--green);box-shadow:8px 8px 0 var(--purple);
+  padding:26px 28px;margin:26px 0}
+.lp-callout p:last-child{margin-bottom:0}
+.lp-math{font-family:var(--font-mono);font-size:.95rem;color:var(--bone);background:var(--bg);
+  border:2px solid var(--green-deep);padding:14px 16px;margin-bottom:16px}
+.lp-math .op{color:var(--green-soft);font-weight:700}
+
+/* trust-boundary diagram */
+.lp-diagram{border:2px solid var(--green);box-shadow:8px 8px 0 var(--green-deep);margin:8px auto 12px;max-width:720px}
+.lp-zone{padding:24px 26px}
+.lp-zone-inside{background:var(--bg-panel);border-bottom:2px dashed var(--green-deep)}
+.lp-zone-label{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green-soft);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.lp-zone-label.out{color:var(--bone-dim)}
+.lp-dot{width:8px;height:8px;background:var(--green);border:1.5px solid #0b0f0c;flex-shrink:0}
+.lp-dot.out{background:var(--bone-dim)}
+.lp-keyflow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.lp-node{flex:1 1 150px;background:var(--bg);border:2px solid var(--green-deep);padding:12px 14px}
+.lp-node.key{border-color:var(--green)}
+.lp-node-t{font-family:var(--font-mono);font-size:.72rem;color:var(--green-soft);margin-bottom:4px}
+.lp-node-d{font-size:.8rem;color:var(--bone-dim);line-height:1.45}
+.lp-arrow{display:grid;place-items:center;color:var(--bone-dim);font-size:1.1rem;flex:0 0 auto}
+@media (max-width:680px){.lp-arrow{transform:rotate(90deg);width:100%;height:18px}.lp-keyflow{flex-direction:column}}
+.lp-boundary-note{margin-top:18px;font-family:var(--font-mono);font-size:.78rem;color:var(--green-soft);font-weight:700}
+.lp-crossing{font-family:var(--font-mono);font-size:.72rem;color:var(--bone-dim);text-align:center;
+  padding:10px;background:var(--bg-panel2)}
+.lp-services{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:24px 26px}
+@media (max-width:680px){.lp-services{grid-template-columns:1fr}}
+.lp-svc{background:var(--bg);border:2px solid var(--green-deep);padding:12px 14px}
+.lp-svc-n{font-family:var(--font-display);font-weight:700;font-size:.92rem;margin-bottom:4px}
+.lp-svc-d{font-size:.78rem;color:var(--bone-dim);line-height:1.5}
+.lp-svc.info .lp-svc-n{color:var(--purple)}
+.lp-caption{font-size:.78rem;color:var(--bone-dim);margin-top:12px;text-align:center;font-style:italic}
+
+/* buy sequence */
+.lp-sequence{list-style:none;counter-reset:step;margin:8px 0 0;padding:0;max-width:720px}
+.lp-sequence li{counter-increment:step;position:relative;padding:12px 0 12px 44px;
+  border-top:2px solid var(--green-deep);color:var(--bone-dim);font-size:.92rem;line-height:1.55}
+.lp-sequence li:first-child{border-top:none}
+.lp-sequence li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:12px;
+  font-family:var(--font-mono);font-size:.76rem;font-weight:700;color:var(--green-soft)}
+.lp-sequence li strong{color:var(--bone);font-weight:700}
+.lp-concurrent{color:var(--purple);font-family:var(--font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+
+/* tradeoff cards */
+.lp-tradeoffs{display:grid;gap:16px;margin-top:10px}
+.lp-to{background:var(--bg-panel);border:2px solid var(--danger);border-left-width:5px;padding:22px 24px}
+.lp-to h3{margin:0 0 8px !important}
+.lp-to p{margin:0}
+.lp-to p+p{margin-top:12px}
+
+/* verify closing */
+.lp-verify{background:var(--bg-panel2);border:3px solid var(--green);box-shadow:10px 10px 0 var(--purple);
+  padding:32px 30px}
+.lp-verify ul{list-style:none;margin:0 0 4px;padding:0}
+.lp-verify li{color:var(--bone-dim);padding:10px 0 10px 26px;position:relative;border-top:2px solid var(--green-deep);font-size:.92rem}
+.lp-verify li:first-child{border-top:none}
+.lp-verify li::before{content:'>';position:absolute;left:0;color:var(--green-soft);font-family:var(--font-mono);font-weight:700}
+.lp-verify li strong{color:var(--bone);font-weight:700}
+.lp-signoff{font-family:var(--font-mono);color:var(--green-soft);font-size:.85rem;margin-top:20px;display:block}
+
+@media (max-width:620px){
+  .lp-services{padding:20px}
+}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important}
