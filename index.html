@@ -397,14 +397,14 @@ import { RoomEnvironment } from './assets/vendor/RoomEnvironment.js';
 // Updated to the full-body model (gobli_full.glb) and its re-measured
 // tracking range, per the tested gobli_hero_full.html reference.
 const CONFIG = {
-  modelURL: './assets/gobli_full.glb',
+  modelURL: './assets/gobli_home.glb',
   baseYaw:  -Math.PI/2,   // model faces camera at this Y rotation (measured)
   yawRange:  0.42,        // max left/right turn toward cursor (rad ~24deg)
   pitchRange:0.12,        // max up/down (rad ~7deg)
   ease:      0.075,       // cursor follow smoothing (lower = lazier)
   idleAmp:   0.05,        // idle sway amplitude (rad) when cursor still
-  idleSpeed: 0.7,         // idle sway speed
-  bobAmp:    0.012,       // vertical breathing of the model (world units)
+  idleSpeed: 0.6,         // idle sway speed
+  bobAmp:    0.015,       // vertical breathing of the model (world units)
   camZ:      3.0, fov: 32, fit: 1.30
 };
 // ==============================================================

@@ -36,7 +36,7 @@ assets/
   apple-touch-icon.png  same art at 180x180 (Apple's standard size) — iOS/iPadOS home
                         screen icon, linked via &lt;link rel="apple-touch-icon"&gt; on
                         every page. Both are downsized from the same 512px master.
-  gobli_full.glb         Gobli's full-body 3D model (hero)
+  gobli_home.glb         Gobli's full-body 3D model (homepage hero)
   gobli_heart.glb        "making a heart" 3D model for donate.html's hero (replaced
                          the earlier kiss-pose model). Optimized from a 55.9MB/979k-
                          vert raw Tripo export down to 4.7MB/87k verts + 1024² textures
