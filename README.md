@@ -37,14 +37,11 @@ assets/
                         screen icon, linked via &lt;link rel="apple-touch-icon"&gt; on
                         every page. Both are downsized from the same 512px master.
   gobli_home.glb         Gobli's full-body 3D model (homepage hero)
-  gobli_heart.glb        "making a heart" 3D model for donate.html's hero (replaced
-                         the earlier kiss-pose model). Optimized from a 55.9MB/979k-
-                         vert raw Tripo export down to 4.7MB/87k verts + 1024² textures
-                         via `gltf-transform` (visually identical to the 9.2MB/160k-vert
-                         first pass at the size it's actually rendered on the page). No
-                         Draco/meshopt compression, still loads with the plain
-                         GLTFLoader. Fetch is deferred via requestIdleCallback in
-                         donate.html so it doesn't compete with first paint.
+  gobli_donate.glb       "making a heart" 3D model for donate.html's hero (replaced
+                         the earlier gobli_heart.glb). No Draco/meshopt compression,
+                         loads with the plain GLTFLoader. Fetch is deferred via
+                         requestIdleCallback in donate.html so it doesn't compete
+                         with first paint.
   proof_snipe.mp4        unedited screen recording for the "Proof" section on index.html (id="proof"):
                          a real snipe with no VPS and Helius's free tier, showing Telegram send time
                          vs. on-chain confirm time. Sped up 2x, no sound, no cuts. 16MB, so the

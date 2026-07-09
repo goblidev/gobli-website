@@ -186,7 +186,7 @@
      only the model URL and the framing/tracking CONFIG changed for the
      heart pose. The buy-popup interaction code from index.html is NOT
      copied here (this page has no popup). Values below were measured
-     against gobli_heart.glb by rendering the model, do not retune blind.
+     against gobli_donate.glb by rendering the model, do not retune blind.
      ================================================================ -->
 <script type="module">
 import * as THREE from './assets/vendor/three.module.js';
@@ -194,13 +194,13 @@ import { GLTFLoader } from './assets/vendor/GLTFLoader.js';
 import { RoomEnvironment } from './assets/vendor/RoomEnvironment.js';
 
 // ===================== GOBLI HEART - config =====================
-// Measured against gobli_heart.glb (Tripo export, same facing convention
+// Measured against gobli_donate.glb (refined Tripo export, same facing convention
 // as gobli_full.glb -> baseYaw = -PI/2). It's a standing "making a heart"
 // figure like the full-body hero, so it reuses the full body's gentler
 // rotation (a tall figure tilting far forward looks like it's toppling)
 // and the same fit/portrait framing.
 const CONFIG = {
-  modelURL: './assets/gobli_heart.glb',
+  modelURL: './assets/gobli_donate.glb',
   baseYaw:  -Math.PI/2,   // model faces camera at this Y rotation (measured)
   yawRange:  0.42,        // max left/right turn toward cursor (rad ~24deg)
   pitchRange:0.12,        // max up/down (rad ~7deg), gentle, prevents toppling
