@@ -54,8 +54,8 @@ assets/
   og_banner.jpg          social preview image for index.html's og:image / twitter:image
                          (link/card previews when the site is shared elsewhere). Center-cropped
                          to the standard 1200x630 OG ratio and exported as JPEG q88 (~125KB) from
-                         the source art. Referenced via the REPLACE_ME_DOMAIN placeholder until
-                         the real domain is live.
+                         the source art. Referenced via the live gobli.io URL in index.html's
+                         OG/twitter meta tags.
   gobli_logo.png         flat brand mark — nav/footer icon
   pose_sniper.png        Gobli holding a sniper rifle — card art for the Sniper product
   pose_shadow.png        Gobli as a detective — card art for the Shadow (wallet tracker) product
