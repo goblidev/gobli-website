@@ -1,8 +1,13 @@
 # Gobli — marketing site
 
 A marketing site for Gobli (Solana sniper toolset, AI goblin mascot): a one-page
-home (`index.html`) plus a handful of standalone pages (About, Donate, Terms,
-Privacy, Disclaimer). The hero is a real 3D model that tracks the cursor.
+home (`index.html`) plus a handful of standalone pages (How It Works, About,
+Donate, Terms, Privacy, Disclaimer). The hero is a real 3D model that tracks the
+cursor.
+
+Two products ship today, the Manual Sniper and the Auto-Sniper, alongside one
+by-hand service (seed phrase recovery). Every one of them has a card in
+`index.html`; there are no "coming soon" cards.
 
 ## Run it (must be over HTTP — not `file://`)
 
@@ -24,9 +29,11 @@ then open the printed `localhost` URL.
 ## Structure
 
 ```
-index.html              home page: hero, products, trust, FAQ, buy popup
+index.html              home page: hero, products, services, proof, FAQ, buy popup
+how-gobli-works.html    How It Works: one card per sniper, each linking its own PDF guide
+404.html                clean-URL fallback for direct/refreshed deep links
 about.html              Company > About
-donate.html             Support > Donate (heart-pose 3D hero + SOL/ETH/BTC tip QR + copy)
+donate.html             Support > Donate (SOL/ETH/BTC tip QR + copy)
 terms.html              Legal > Terms
 privacy.html            Legal > Privacy
 disclaimer.html         Legal > Disclaimer
@@ -37,32 +44,45 @@ assets/
                         screen icon, linked via &lt;link rel="apple-touch-icon"&gt; on
                         every page. Both are downsized from the same 512px master.
   gobli_home.glb         Gobli's full-body 3D model (homepage hero)
-  gobli_donate.glb       "making a heart" 3D model for donate.html's hero (replaced
-                         the earlier gobli_heart.glb). No Draco/meshopt compression,
-                         loads with the plain GLTFLoader. Fetch is deferred via
-                         requestIdleCallback in donate.html so it doesn't compete
-                         with first paint.
-  proof_snipe.mp4        unedited screen recording for the "Proof" section on index.html (id="proof"):
-                         a real snipe with no VPS and Helius's free tier, showing Telegram send time
-                         vs. on-chain confirm time. Sped up 2x, no sound, no cuts. 16MB, so the
-                         <video> tag uses preload="metadata" instead of eager-loading it.
-  proof_thumbnail.jpg    poster frame for the proof_snipe.mp4 <video>, shown before playback.
-                         Downscaled to 1600px wide (retina-appropriate for the ~800px max
-                         display width inside .proof-box) and re-exported as JPEG q82, ~200KB.
+  gobli_donate.glb       "making a heart" 3D model, previously donate.html's hero.
+                         Unused since that hero was removed; nothing references it and
+                         it is no longer downloaded by any page. Kept, not deleted.
+  proof_manual.mp4       unedited screen recording of the Manual Sniper, left card of the "Proof"
+                         section on index.html (id="proof"). 1920x1080, 24s, 8MB.
+  proof_auto.mp4         same for the Auto-Sniper, right card. 1920x1080, 71s, 30MB. Both <video>
+                         tags use preload="metadata" so neither file downloads until played.
+  proof_manual_poster.jpg / proof_auto_poster.jpg
+                         poster frames shown before playback: purpose-made branded thumbnails,
+                         normalised to exactly 1280x720 and exported as JPEG q82 progressive.
                          Bump the ?v= query string on the poster="" attribute in index.html
-                         whenever this file is replaced, browsers cache it by filename alone.
+                         whenever either is replaced, browsers cache by filename alone
+                         (currently ?v=2).
   og_banner.jpg          social preview image for index.html's og:image / twitter:image
                          (link/card previews when the site is shared elsewhere). Center-cropped
                          to the standard 1200x630 OG ratio and exported as JPEG q88 (~125KB) from
                          the source art. Referenced via the live gobli.io URL in index.html's
                          OG/twitter meta tags.
   gobli_logo.png         flat brand mark — nav/footer icon
-  pose_sniper.png        Gobli holding a sniper rifle — card art for the Sniper product
-  pose_shadow.png        Gobli as a detective — card art for the Shadow (wallet tracker) product
-  pose_mirror.png        Gobli holding a sniper rifle while checking a hand mirror — card art
-                         for the Mirror (copy-trade) product
-  pose_source_included.png  Gobli holding a "Source Included" wood sign — art for the source
-                         trust section on index.html (id="how")
+  gobli_sniper.png       Gobli taking aim down a sniper rifle — card art for the Manual Sniper,
+                         on index.html and how-gobli-works.html. Downscaled from a 1024px master
+                         to 480x480 and quantized to a 256-colour palette (~31KB instead of
+                         ~185KB); indistinguishable at the 150px it actually renders at.
+  gobli_auto_sniper.png  Gobli asleep cradling the rifle — card art for the Auto-Sniper, same
+                         two pages, same downscale/quantize treatment.
+  gobli_seed.png         Gobli hunched over a laptop — art for the seed phrase recovery
+                         service on index.html, same downscale/quantize treatment.
+  gobli-manual-sniper.pdf  Manual Sniper setup guide, linked from how-gobli-works.html.
+  gobli-auto-sniper.pdf    Auto-Sniper setup guide, linked from the same page. Both are the
+                         post-purchase setup guides, published here as the public explainers.
+                         Checked clean of Info-dict/XMP leaks before shipping; re-check on
+                         every replacement.
+  pose_shadow.png        Gobli as a detective. Unused, superseded by gobli_seed.png.
+  pose_sniper.png        Older flat sniper art, superseded by gobli_sniper.png. Unused.
+  pose_mirror.png        Gobli with a rifle and a hand mirror. Unused since the Mirror card was
+                         removed.
+  pose_source_included.png  Gobli holding a "Source Included" wood sign. Unused since the
+                         standalone source/trust sections were folded into the product cards.
+                         The four unused poses are kept because the art is still good.
   vendor/
     three.module.js      Three.js r160
     GLTFLoader.js
@@ -77,6 +97,8 @@ assets/
                          qrcode-generator.js on donate.html; both files are required.
 archive/                old assets kept for reference, do not deploy
 ```
+
+## No CDN
 
 No CDN is used for any of the above. The **only** external network request the
 page makes is to Google Fonts (Space Grotesk / Inter / JetBrains Mono).

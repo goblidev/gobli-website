@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ---------------------------------------------------------------------
 // Clean-URL section navigation (index.html only - pages without a #hero
-// element skip this entirely). Rewrites in-page anchor jumps (#trust,
-// #proof, ...) to real-looking paths (/self-hosted, /proof, ...) via the
+// element skip this entirely). Rewrites in-page anchor jumps (#services,
+// #proof, ...) to real-looking paths (/services, /proof, ...) via the
 // History API instead of leaving a "#hash" in the address bar. GitHub
 // Pages has no server-side router, so 404.html plus the DOMContentLoaded
 // handler below fake one: a fresh visit, refresh, or shared link to one
@@ -33,9 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 (function () {
   const SECTION_PATHS = {
     hero: '/',
-    how: '/source-included',
     products: '/products',
-    trust: '/self-hosted',
+    services: '/services',
     proof: '/proof',
     faq: '/before-you-snipe',
   };

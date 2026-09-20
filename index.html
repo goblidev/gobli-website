@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gobli - Self-Hosted Solana Sniper</title>
-<meta name="description" content="Gobli is a synthetic goblin sniper for Solana token launches. Paste a contract address in Telegram, fire through Jupiter in under 500ms. Self-hosted, your keys never leave your machine.">
+<title>Gobli - Self-Hosted Solana Snipers</title>
+<meta name="description" content="Gobli is a synthetic goblin sniper for Solana token launches. Paste a contract in Telegram, or set rules and let the Auto-Sniper fire on its own. Self-hosted, your keys never leave your machine.">
 <meta name="theme-color" content="#0b0f0c">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://gobli.io/">
-<meta property="og:title" content="Gobli — Self-Hosted Solana Sniper">
-<meta property="og:description" content="You paste it. I snipe it. A synthetic goblin sniper for Solana token launches. Self-hosted. Your keys never leave your machine.">
+<meta property="og:title" content="Gobli — Self-Hosted Solana Snipers">
+<meta property="og:description" content="Your rules. My trigger. Paste a launch in yourself, or set the rules and Gobli snipes it without you. Self-hosted Solana snipers. Your keys never leave your machine.">
 <meta property="og:image" content="https://gobli.io/assets/og_banner.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=14">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -32,21 +32,19 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#hero"><img src="assets/gobli_logo.png" alt="Gobli, home" width="40" height="40"></a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#how">Source Included</a>
       <a href="#products">Products</a>
-      <a href="#trust">Self-Hosted</a>
+      <a href="#services">Services</a>
       <a href="#proof">Proof</a>
       <a href="how-gobli-works">How It Works</a>
       <a href="#faq">Before You Snipe</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn btn-primary btn-sm" href="#products">Get the Sniper</a>
+      <a class="btn btn-primary btn-sm" href="#products">Get Gobli</a>
       <details class="nav-mobile">
         <summary>Menu</summary>
         <div class="nav-mobile-panel">
-          <a href="#how">Source Included</a>
           <a href="#products">Products</a>
-          <a href="#trust">Self-Hosted</a>
+          <a href="#services">Services</a>
           <a href="#proof">Proof</a>
           <a href="how-gobli-works">How It Works</a>
           <a href="#faq">Before You Snipe</a>
@@ -61,7 +59,7 @@
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="hero" aria-labelledby="hero-heading">
   <div class="wrap hero-inner">
-    <p class="eyebrow">SOLANA &middot; SUB-500MS EXECUTION</p>
+    <p class="eyebrow">SOLANA &middot; MANUAL &amp; AUTO &middot; SUB-500MS</p>
 
     <div class="hero-stage-wrap">
       <div class="gobli-stage" id="gobliStage">
@@ -73,27 +71,13 @@
       </div>
     </div>
 
-    <h1 id="hero-heading">You paste it.<br>I snipe it.</h1>
-    <p class="lede">A synthetic goblin who eats token launches in under 500ms, so you stop missing the entry
-      while the candle runs without you. Self-hosted. Your keys never leave your machine. I wouldn't want them anyway.</p>
+    <h1 id="hero-heading">Your rules.<br>My trigger.</h1>
+    <p class="lede">A synthetic goblin who eats token launches in under 500ms. Paste one in yourself, or set
+      the rules and let me hunt them down without you. Self-hosted, either way. Your keys never leave your
+      machine. I wouldn't want them anyway.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#products">Put me to work</a>
       <a class="btn btn-ghost" href="https://t.me/goblivillage" target="_blank" rel="noopener">Join the Telegram</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SOURCE INCLUDED ===================== -->
-<section class="opensource" id="how" aria-labelledby="how-heading">
-  <div class="wrap">
-    <div class="opensource-band">
-      <img class="opensource-art" src="assets/pose_source_included.png" alt="Gobli holding a wooden sign that says Source Included" loading="lazy" decoding="async">
-      <div class="opensource-copy">
-        <p class="eyebrow">No black box</p>
-        <h2 id="how-heading">Read the code. Then run it.</h2>
-        <p>Buy the Sniper and you get the full source, not a sealed binary. Read every line before it
-          touches your wallet, or pay someone you trust to do it for you. Nothing here runs on faith.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -104,116 +88,123 @@
     <div class="section-head">
       <p class="eyebrow">The arsenal</p>
       <h2 id="products-heading">Pick your weapon</h2>
-      <p>One tool is live. Two more are coming soon.</p>
+      <p>Two snipers, same trigger finger. The only question is who pulls it.</p>
     </div>
 
     <div class="cards">
-      <!-- Card 1 — LIVE -->
+      <!-- Card 1 - MANUAL -->
       <article class="card is-live">
         <div class="card-art-wrap">
-          <img class="card-art" src="assets/pose_sniper.png" alt="Gobli holding a sniper rifle" width="480" height="480" loading="lazy" decoding="async">
+          <img class="card-art" src="assets/gobli_sniper.png" alt="Gobli taking aim down a sniper rifle" width="480" height="480" loading="lazy" decoding="async">
         </div>
         <span class="card-kicker">Manual</span>
         <h3>Gobli Sniper</h3>
-        <p class="price">$199 <span style="color:var(--bone-dim);font-size:.7em">one-time</span></p>
+        <p class="price">$49</p>
         <p class="desc">Paste a contract in Telegram. I buy it through Jupiter in under 500ms and hand you
-          one-tap preset sells. No chart-staring. No missed entries.</p>
+          one-tap preset sells. You call every shot. No chart-staring. No missed entries.</p>
         <ul class="specs">
-          <li>Helius RPC</li>
-          <li>Helius Sender (staked broadcast)</li>
+          <li>Paste a mint, buy in under 500ms</li>
           <li>Jupiter swaps</li>
-          <li>Telegram-triggered</li>
-          <li>Preset sell buttons</li>
-          <li>Self-hosted (your VPS, your keys)</li>
+          <li>Helius Sender (staked broadcast)</li>
+          <li>Preset sell buttons + TP/SL</li>
+          <li>Full source included</li>
+          <li>Self-hosted</li>
         </ul>
         <div class="card-cta">
-          <button class="btn btn-primary" style="width:100%" type="button" data-open-drawer>
+          <button class="btn btn-primary" style="width:100%" type="button"
+            data-open-drawer
+            data-product="Gobli Sniper"
+            data-price="$49 &middot; message us to buy"
+            data-note="Tell me you want the Manual Sniper and I'll get you sorted. No forms, no waiting on a support ticket.">
             Snipe with Gobli
           </button>
         </div>
       </article>
 
-      <!-- Card 2 — COMING SOON -->
-      <article class="card is-locked">
-        <span class="badge-locked">Soon&trade;</span>
+      <!-- Card 2 - AUTO -->
+      <article class="card is-live">
         <div class="card-art-wrap">
-          <img class="card-art" src="assets/pose_shadow.png" alt="Gobli dressed as a detective, holding a magnifying glass" width="480" height="480" loading="lazy" decoding="async">
-        </div>
-        <span class="card-kicker">Tracker</span>
-        <h3>Gobli Shadow</h3>
-        <p class="price">$99 <span style="color:var(--bone-dim);font-size:.7em">one-time</span></p>
-        <p class="desc">Paste any wallet in Telegram. I watch it 24/7 and ping you the second it buys, sells,
-          or swaps what token, how much, which DEX. No keys. No funds at risk. I only watch.</p>
-        <ul class="specs">
-          <li>Helius webhooks</li>
-          <li>Buy / sell / swap alerts</li>
-          <li>Telegram-triggered</li>
-          <li>Read-only, never holds your keys</li>
-          <li>Self-hosted (your VPS, your Helius key)</li>
-        </ul>
-        <div class="card-cta">
-          <button class="btn btn-ghost" style="width:100%" type="button" disabled>Shadow with Gobli</button>
-          <p class="locked-link" style="margin-top:10px">
-            <a href="https://t.me/goblivillage" target="_blank" rel="noopener">Join the Telegram to get it first &rarr;</a>
-          </p>
-        </div>
-      </article>
-
-      <!-- Card 3 — COMING SOON -->
-      <article class="card is-locked">
-        <span class="badge-locked">Soon&trade;</span>
-        <div class="card-art-wrap">
-          <img class="card-art" src="assets/pose_mirror.png" alt="Gobli holding a sniper rifle while checking a hand mirror" width="480" height="480" loading="lazy" decoding="async">
+          <img class="card-art" src="assets/gobli_auto_sniper.png" alt="Gobli asleep, cradling a sniper rifle" width="480" height="480" loading="lazy" decoding="async">
         </div>
         <span class="card-kicker">Auto</span>
-        <h3>Gobli Mirror</h3>
-        <p class="price">$299 <span style="color:var(--bone-dim);font-size:.7em">one-time</span></p>
-        <p class="desc">Drop a smart-money wallet in Telegram. I watch it in real time and copy every buy and
-          sell from your own wallet, sized to your rules, filtered for rugs, landed through Jupiter. No
-          per-trade fees. No handing your keys to a stranger.</p>
+        <h3>Gobli Auto-Sniper</h3>
+        <p class="price">$199</p>
+        <p class="desc">Write the rules once, then go do something else. I watch pump.fun launches live and
+          buy the ones that match, with no human in the loop and hard caps on what I'm allowed to spend.</p>
         <ul class="specs">
-          <li>transactionSubscribe detection</li>
-          <li>Auto buy + proportional sell</li>
-          <li>Sizing + risk caps + honeypot filter</li>
-          <li>Self-hosted, your keys never leave your VPS</li>
-          <li>No per-trade cut, ever</li>
+          <li>Rules by creator wallet or ticker</li>
+          <li>Live pump.fun launch feed</li>
+          <li>Buys with no human in the loop</li>
+          <li>Risk caps, cooldowns, kill switch</li>
+          <li>Full source included</li>
+          <li>Self-hosted</li>
         </ul>
         <div class="card-cta">
-          <button class="btn btn-ghost" style="width:100%" type="button" disabled>Mirror Smart Money</button>
-          <p class="locked-link" style="margin-top:10px">
-            <a href="https://t.me/goblivillage" target="_blank" rel="noopener">Join the Telegram to get it first &rarr;</a>
-          </p>
+          <button class="btn btn-primary" style="width:100%" type="button"
+            data-open-drawer
+            data-product="Gobli Auto-Sniper"
+            data-price="$199 &middot; message us to buy"
+            data-note="Tell me you want the Auto-Sniper and I'll get you sorted. No forms, no waiting on a support ticket.">
+            Let Gobli hunt
+          </button>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ===================== TRUST BAND ===================== -->
-<section class="trust" id="trust" aria-labelledby="trust-heading">
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services" aria-labelledby="services-heading">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Why self-hosted</p>
-      <h2 id="trust-heading">No custody. No middleman. No trust required.</h2>
-      <p>Most crypto tools want your keys or your funds. Here's exactly why this one doesn't.</p>
+      <p class="eyebrow">Services</p>
+      <h2 id="services-heading">Locked out of your own wallet?</h2>
     </div>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="icon" aria-hidden="true">KEY</div>
-        <h3>Your keys stay on your machine</h3>
-        <p>Gobli runs on your own VPS. Private keys never touch our servers, because we don't have any.</p>
+
+    <article class="service-card">
+      <img class="service-art" src="assets/gobli_seed.png" alt="Gobli hunched over a laptop, working through a seed phrase" width="480" height="480" loading="lazy" decoding="async">
+
+      <div class="service-body">
+        <div class="service-head">
+          <h3>Seed Phrase Recovery</h3>
+          <p class="service-price">10&ndash;25% <span>of what I recover</span></p>
+        </div>
+
+        <p class="desc">A few words short of a seed phrase? I grind the combinations until one opens it.</p>
+
+        <div class="service-lists">
+          <div class="service-list can">
+            <h4>Can work with</h4>
+            <ul>
+              <li>1&ndash;3 missing words</li>
+              <li>Wrong order, or a typo</li>
+              <li>4+ words, if you have clues</li>
+            </ul>
+          </div>
+          <div class="service-list cant">
+            <h4>Can't fix</h4>
+            <ul>
+              <li>4+ words, no clues</li>
+              <li>No phrase at all</li>
+              <li>Not your wallet</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-foot">
+          <button class="btn btn-primary" type="button"
+            data-open-drawer
+            data-product="Seed Phrase Recovery"
+            data-price="10&ndash;25% of what I recover &middot; nothing upfront"
+            data-note="Tell me what's left of the phrase and what's missing. Every case is different, so ask, and I'll tell you straight whether it's worth trying."
+            data-trust="Everything runs under a digital contract agreed before I start. I will never message you first, never ask for a phrase that still works, and never ask you to send funds anywhere. Nothing is owed unless the wallet opens.">
+            Ask about your case
+          </button>
+          <p class="service-note">Every case is different, so ask. <strong>Nothing upfront</strong>, paid from
+            what I recover, under a contract we agree first.</p>
+        </div>
       </div>
-      <div class="pillar">
-        <div class="icon" aria-hidden="true">0×</div>
-        <h3>No custody, no middleman</h3>
-        <p>I never hold your funds at any point. You sign, you send, you sell.</p>
-      </div>
-      <div class="pillar">
-        <div class="icon" aria-hidden="true">DOC</div>
-        <h3>Open setup guide included</h3>
-        <p>Every step from VPS to first snipe is documented. Nothing hidden, nothing assumed.</p>
-      </div>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -222,35 +213,25 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Receipts</p>
-      <h2 id="proof-heading">Gobli, actually sniping</h2>
-      <p>No script, no cuts. One take, sped up 2x, sound off. Here's the part that matters: how fast
-        the buy actually lands on-chain.</p>
+      <h2 id="proof-heading">It exists. It works.</h2>
+      <p>One recording each, no cuts. Watch them do the job.</p>
     </div>
-    <div class="proof-box">
-      <video class="proof-video" src="assets/proof_snipe.mp4" poster="assets/proof_thumbnail.jpg?v=3" controls playsinline preload="metadata"></video>
-      <div class="proof-timeline">
-        <div class="proof-stamp">
-          <span class="proof-label">Contract sent in Telegram</span>
-          <span class="proof-time">21:50:50</span>
-        </div>
-        <span class="proof-arrow" aria-hidden="true">&rarr;</span>
-        <div class="proof-stamp">
-          <span class="proof-label">Buy confirmed on-chain</span>
-          <span class="proof-time">21:50:50</span>
-        </div>
-      </div>
-      <div class="proof-notes">
-        <p><strong>This run is the floor, not the ceiling.</strong> No VPS, recorded over a home
-          connection nowhere near a Helius data center, on Helius's free tier instead of the paid
-          Developer tier. Every one of those costs speed, and this is what Gobli does anyway.</p>
-        <p>The contract address hit Telegram at <code>21:50:50</code>, and the buy was already
-          confirmed on Solana at <code>21:50:50</code>, same second, start to finish.</p>
-        <p>If Telegram itself looks a beat slow to render in the video, that's Telegram's UI catching
-          up, not Gobli. The only clock that matters is the blockchain's, and that's the one
-          timestamped above.</p>
-        <p>Put the Sniper on a VPS next to Helius's infrastructure with the Developer tier RPC, the
-          setup it's actually built for, and it gets faster than what you're watching here.</p>
-      </div>
+
+    <div class="proof-grid">
+      <article class="proof-card">
+        <video class="proof-video" src="assets/proof_manual.mp4" poster="assets/proof_manual_poster.jpg?v=2"
+          controls playsinline preload="metadata"></video>
+        <span class="proof-kicker">Manual</span>
+        <p>A real snipe, end to end. The mint and the buy are on screen, so you can pull the transaction up
+          on-chain and check it yourself.</p>
+      </article>
+
+      <article class="proof-card">
+        <video class="proof-video" src="assets/proof_auto.mp4" poster="assets/proof_auto_poster.jpg?v=2"
+          controls playsinline preload="metadata"></video>
+        <span class="proof-kicker">Auto</span>
+        <p>Rules set, then hands off. This is it running on its own, with nobody at the keyboard.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -264,8 +245,24 @@
     </div>
     <div class="faq-list">
       <details class="faq-item">
+        <summary>What's the difference between the Manual and the Auto Sniper?</summary>
+        <p class="faq-a">Who pulls the trigger. With the Manual Sniper you paste a contract into Telegram
+          and I buy it right then, so nothing happens unless you say so. With the Auto-Sniper you write the
+          rules up front, a creator wallet to follow or a ticker to watch, and I buy on my own when a launch
+          matches, whether or not you're at your desk. Same wallet model, same self-hosting, different
+          trigger.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What can the Auto-Sniper actually buy?</summary>
+        <p class="faq-a">pump.fun launches, live and verified in both directions. It watches new launches as
+          they hit the chain and fires on the ones matching your rules. It starts in dry run, so it walks
+          through the whole pipeline without spending anything until you deliberately turn it live, and it
+          holds caps on how much it may spend per snipe and per day, a cooldown per creator, and a kill
+          switch that drops every rule and sells every position in one command.</p>
+      </details>
+      <details class="faq-item">
         <summary>Do you ever see my private key?</summary>
-        <p class="faq-a">Never. Gobli is self-hosted and runs on your own VPS. Your keys stay on your
+        <p class="faq-a">Never. Both snipers are self-hosted and run on your own VPS. Your keys stay on your
           machine.</p>
       </details>
       <details class="faq-item">
@@ -280,25 +277,35 @@
           purchase. SOL, ETH and BTC land directly, no middleman, no waiting.</p>
       </details>
       <details class="faq-item">
-        <summary>Why is $199 one-time cheaper than the "free" bots?</summary>
+        <summary>Why is a one-time price cheaper than the "free" bots?</summary>
         <p class="faq-a">Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every
           transaction, that's ~2% per trade, buy and sell. Cycle just $10k through positions and
-          you've already paid $200. Gobli costs $199. Once. Forever.</p>
+          you've already paid $200. Gobli costs $49 or $199. Once. Forever.</p>
       </details>
       <details class="faq-item">
-        <summary>Will there be more Gobli tools?</summary>
-        <p class="faq-a">Yes. More tools are already in development and will be released over time.
-          Early supporters will hear about them first.</p>
+        <summary>How does the seed phrase recovery work, and when do I pay?</summary>
+        <p class="faq-a">You tell me what's left of the phrase and what's missing, and I search the
+          combinations until one opens the wallet. One to three missing or misordered words is the
+          realistic range, more only if you have clues that narrow it down. Every case is different, so
+          ask. The percentage and the terms go into a digital contract before I start, the fee comes out
+          of what's recovered, and if nothing opens you owe nothing.</p>
       </details>
       <details class="faq-item">
-        <summary>Why are you selling the sniper if it works?</summary>
+        <summary>Do the tools get updates?</summary>
+        <p class="faq-a">Yes. Solana, Jupiter and the launchpads all change, sometimes with no warning, so
+          the tools change with them. Buy once and the updates are yours, no subscription and no second
+          invoice. New venues and features land the same way, and the Telegram is where they get announced
+          first.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why are you selling the snipers if they work?</summary>
         <p class="faq-a">Nobody asks a shovel company why they don't mine gold themselves. Same here.
           Gobli still requires you to stay active and put your own capital at risk.</p>
       </details>
       <details class="faq-item">
         <summary>Why is Gobli AI-generated?</summary>
         <p class="faq-a">Because Gobli is designed to be a living digital mascot. AI lets us create new
-          content quickly while keeping the character consistent. The goal here is the Sniper, not a
+          content quickly while keeping the character consistent. The goal here is the tools, not a
           mascot studio, so we're not burning time or budget on hand-drawn art for something that isn't
           concretely part of the business.</p>
       </details>
@@ -326,9 +333,8 @@
     <div class="footer-col">
       <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Resources</h4>
       <ul class="footer-links">
-        <li><a href="#how">Source Included</a></li>
         <li><a href="#products">Products</a></li>
-        <li><a href="#trust">Self-Hosted</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#proof">Proof</a></li>
         <li><a href="how-gobli-works">How It Works</a></li>
         <li><a href="#faq">Before You Snipe</a></li>
@@ -395,12 +401,12 @@
   <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" id="drawer">
     <button class="drawer-close" id="drawerClose" type="button" aria-label="Close">&times;</button>
     <h2 id="drawerTitle">Snipe with Gobli</h2>
-    <p class="drawer-sub">$199 one-time &middot; message us to buy</p>
-    <p class="after-note">Tell me you want the Sniper and I'll get you sorted. No forms, no
+    <p class="drawer-sub" id="drawerSub">message us to buy</p>
+    <p class="after-note" id="drawerNote">Tell me what you're after and I'll get you sorted. No forms, no
       waiting on a support ticket.</p>
     <a class="btn btn-primary" style="width:100%;margin-bottom:18px" href="https://t.me/goblidev" target="_blank" rel="noopener">Message us on Telegram</a>
-    <p class="trust-note">Gobli is self-hosted software. We will never DM you first, never ask for your
-      seed phrase, never ask you to import a wallet.</p>
+    <p class="trust-note" id="drawerTrust">Gobli is self-hosted software. We will never DM you first, never
+      ask for your seed phrase, never ask you to import a wallet.</p>
   </div>
 </div>
 
@@ -561,6 +567,18 @@ const overlay  = document.getElementById('drawerOverlay');
 const drawerEl = document.getElementById('drawer');
 const closeBtn = document.getElementById('drawerClose');
 
+// One drawer serves every product and service. Each trigger carries its own
+// copy in data- attributes; the fields left in the markup are the fallback.
+const drawerFields = {
+  product: document.getElementById('drawerTitle'),
+  price:   document.getElementById('drawerSub'),
+  note:    document.getElementById('drawerNote'),
+  trust:   document.getElementById('drawerTrust'),
+};
+const drawerDefaults = Object.fromEntries(
+  Object.entries(drawerFields).map(([k, el]) => [k, el.textContent])
+);
+
 let lastFocused = null;
 
 function onKeydown(e){
@@ -572,6 +590,14 @@ function onKeydown(e){
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
+}
+
+function fillDrawer(data){
+  // Entities in the data- attributes are already decoded by the parser, so
+  // textContent is both correct and safe here.
+  Object.keys(drawerFields).forEach((k) => {
+    drawerFields[k].textContent = (data && data[k]) || drawerDefaults[k];
+  });
 }
 
 function openDrawer(){
@@ -588,7 +614,9 @@ function closeDrawer(){
   if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
 }
 
-document.querySelectorAll('[data-open-drawer]').forEach(btn => btn.addEventListener('click', openDrawer));
+document.querySelectorAll('[data-open-drawer]').forEach((btn) => {
+  btn.addEventListener('click', () => { fillDrawer(btn.dataset); openDrawer(); });
+});
 closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDrawer(); });
 </script>

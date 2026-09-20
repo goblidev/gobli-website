@@ -21,21 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=7">
-<style>
-  /* Donate-page heart stage: the "making a heart" model is a standing figure
-     (~0.45 wide x 0.98 tall), like the full-body hero, so it frames best in
-     a portrait (4/5) box rather than the hero's square default. The #id
-     selector beats the shared .gobli-stage class rule without !important,
-     so this stays scoped to this page only. */
-  .donate-hero{ display:flex; justify-content:center; margin:6px 0 30px; }
-  #gobliStage{
-    width: min(320px, 72vw);
-    height: min(400px, 90vw);
-    max-width: 320px;
-    max-height: 400px;
-  }
-</style>
+<link rel="stylesheet" href="assets/style.css?v=14">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -44,21 +30,19 @@
   <div class="wrap nav-inner">
     <a class="brand" href="/"><img src="assets/gobli_logo.png" alt="Gobli, home" width="40" height="40"></a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">Source Included</a>
       <a href="/#products">Products</a>
-      <a href="/#trust">Self-Hosted</a>
+      <a href="/#services">Services</a>
       <a href="/#proof">Proof</a>
       <a href="how-gobli-works">How It Works</a>
       <a href="/#faq">Before You Snipe</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn btn-primary btn-sm" href="/#products">Get the Sniper</a>
+      <a class="btn btn-primary btn-sm" href="/#products">Get Gobli</a>
       <details class="nav-mobile">
         <summary>Menu</summary>
         <div class="nav-mobile-panel">
-          <a href="/#how">Source Included</a>
           <a href="/#products">Products</a>
-          <a href="/#trust">Self-Hosted</a>
+          <a href="/#services">Services</a>
           <a href="/#proof">Proof</a>
           <a href="how-gobli-works">How It Works</a>
           <a href="/#faq">Before You Snipe</a>
@@ -72,20 +56,10 @@
   <div class="legal-content">
     <a class="back-link" href="/">&larr; Back to Gobli</a>
 
-    <div class="donate-hero">
-      <div class="gobli-stage" id="gobliStage">
-        <div class="gobli-glow"></div>
-        <div class="gobli-floor"></div>
-        <canvas class="gobli-canvas" id="gobliCanvas"
-          aria-label="Gobli making a heart with his hands, watching your cursor"></canvas>
-        <p class="gobli-loading" id="gobliLoading">summoning goblin&hellip;</p>
-      </div>
-    </div>
-
     <h1>Support Gobli</h1>
-    <p class="page-subtitle">If the Sniper made you money, or you just want to help fund what's next, a tip means a lot.</p>
+    <p class="page-subtitle">If Gobli made you money, or you just want to help fund what's next, a tip means a lot.</p>
 
-    <p>The Sniper is sold at a fair one-time price, and that's all you ever need to pay to use it. If
+    <p>The snipers are sold at a fair one-time price, and that's all you ever need to pay to use them. If
       you'd like to chip in a little extra toward development, send any amount to any of the addresses
       below.</p>
 
@@ -140,9 +114,8 @@
     <div class="footer-col">
       <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Resources</h4>
       <ul class="footer-links">
-        <li><a href="/#how">Source Included</a></li>
         <li><a href="/#products">Products</a></li>
-        <li><a href="/#trust">Self-Hosted</a></li>
+        <li><a href="/#services">Services</a></li>
         <li><a href="/#proof">Proof</a></li>
         <li><a href="how-gobli-works">How It Works</a></li>
         <li><a href="/#faq">Before You Snipe</a></li>
@@ -203,146 +176,6 @@
     </div>
   </div>
 </footer>
-
-<!-- ===================== HEART HERO: 3D module =====================
-     Lifted from index.html's tested hero <script type="module">, with
-     only the model URL and the framing/tracking CONFIG changed for the
-     heart pose. The buy-popup interaction code from index.html is NOT
-     copied here (this page has no popup). Values below were measured
-     against gobli_donate.glb by rendering the model, do not retune blind.
-     ================================================================ -->
-<script type="module">
-import * as THREE from './assets/vendor/three.module.js';
-import { GLTFLoader } from './assets/vendor/GLTFLoader.js';
-import { RoomEnvironment } from './assets/vendor/RoomEnvironment.js';
-
-// ===================== GOBLI HEART - config =====================
-// Measured against gobli_donate.glb (refined Tripo export, same facing convention
-// as gobli_full.glb -> baseYaw = -PI/2). It's a standing "making a heart"
-// figure like the full-body hero, so it reuses the full body's gentler
-// rotation (a tall figure tilting far forward looks like it's toppling)
-// and the same fit/portrait framing.
-const CONFIG = {
-  modelURL: './assets/gobli_donate.glb',
-  baseYaw:  -Math.PI/2,   // model faces camera at this Y rotation (measured)
-  yawRange:  0.42,        // max left/right turn toward cursor (rad ~24deg)
-  pitchRange:0.12,        // max up/down (rad ~7deg), gentle, prevents toppling
-  ease:      0.075,       // cursor follow smoothing (lower = lazier)
-  idleAmp:   0.05,        // idle sway amplitude (rad) when cursor still
-  idleSpeed: 0.7,         // idle sway speed
-  bobAmp:    0.012,       // vertical breathing of the model (world units)
-  camZ:      3.0, fov: 32, fit: 1.30
-};
-// ==============================================================
-
-const stage  = document.getElementById('gobliStage');
-const canvas = document.getElementById('gobliCanvas');
-const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.05;
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(CONFIG.fov, 1, 0.1, 100);
-camera.position.set(0,0,CONFIG.camZ);
-
-// environment (soft reflections for PBR + eye catchlights)
-const pmrem = new THREE.PMREMGenerator(renderer);
-scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-
-// lighting rig - key (white), rim (goblin green), fill (hoodie purple)
-scene.add(new THREE.AmbientLight(0xffffff, 0.35));
-const key = new THREE.DirectionalLight(0xffffff, 1.25); key.position.set(2.2,2.6,3); scene.add(key);
-const rim = new THREE.DirectionalLight(0x9bd75a, 0.7);  rim.position.set(-3,1.2,-2);  scene.add(rim);
-const fill= new THREE.DirectionalLight(0x7a4ddb, 0.45); fill.position.set(-2,-1.4,2);  scene.add(fill);
-
-const pivot = new THREE.Group(); scene.add(pivot);
-let model=null, modelBaseY=0;
-
-// Defer the ~4.7MB model fetch until the browser is idle, so it doesn't
-// compete with fonts, the QR script, or first paint for bandwidth on this
-// secondary page. Falls back to a short timeout on browsers without
-// requestIdleCallback (Safari).
-function loadModel(){
-  new GLTFLoader().load(CONFIG.modelURL, (gltf)=>{
-    const m = gltf.scene;
-    const box = new THREE.Box3().setFromObject(m);
-    const c = box.getCenter(new THREE.Vector3());
-    m.position.sub(c);                                   // center at origin
-    const size = box.getSize(new THREE.Vector3());
-    m.scale.setScalar(CONFIG.fit / Math.max(size.x,size.y,size.z));
-    pivot.add(m);
-    pivot.rotation.y = CONFIG.baseYaw;
-    modelBaseY = pivot.position.y;
-    model = pivot;
-    const loadingEl = document.getElementById('gobliLoading');
-    if (loadingEl) loadingEl.style.display = 'none';
-  }, undefined, (e)=>{
-    console.error('GLB load error', e);
-    const loadingEl = document.getElementById('gobliLoading');
-    if (loadingEl) loadingEl.textContent = 'gobli failed to load, serve over http://, not file://';
-  });
-}
-if (window.requestIdleCallback) {
-  requestIdleCallback(loadModel, { timeout: 2000 });
-} else {
-  setTimeout(loadModel, 200);
-}
-
-// pointer state (-1..1 across the stage), eased
-let tx=0,ty=0,cx=0,cy=0,lastMove=performance.now();
-function onMove(e){
-  const r = stage.getBoundingClientRect();
-  tx = Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(r.width/2)));
-  ty = Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(r.height/2)));
-  lastMove = performance.now();
-}
-window.addEventListener('mousemove', onMove, {passive:true});
-window.addEventListener('mouseleave', ()=>{tx=0;ty=0;});
-window.addEventListener('touchmove', e=>{ if(e.touches[0]) onMove(e.touches[0]); }, {passive:true});
-
-function resize(){
-  const r = stage.getBoundingClientRect();
-  const dpr = Math.min(window.devicePixelRatio||1, 2);
-  renderer.setPixelRatio(dpr);
-  renderer.setSize(r.width, r.height, false);
-  camera.aspect = r.width/r.height; camera.updateProjectionMatrix();
-}
-new ResizeObserver(resize).observe(stage); resize();
-
-// Skip the render/animation work while the canvas is scrolled off-screen —
-// a continuous WebGL draw call costs real GPU/CPU even when invisible, and
-// on mobile that competes with scroll compositing. Still tick the rAF chain
-// so it resumes the instant the hero scrolls back into view.
-let heroVisible = true;
-new IntersectionObserver((entries)=>{ heroVisible = entries[0].isIntersecting; }, {threshold:0}).observe(stage);
-
-const clock = new THREE.Clock();
-function tick(){
-  if(!heroVisible){ requestAnimationFrame(tick); return; }
-  const t = clock.getElapsedTime();
-  cx += (tx-cx)*CONFIG.ease;
-  cy += (ty-cy)*CONFIG.ease;
-  if(model){
-    if(reduce){
-      model.rotation.y = CONFIG.baseYaw;
-      model.rotation.x = 0;
-    } else {
-      const idle = (performance.now()-lastMove > 1400);
-      const sway = idle ? Math.sin(t*CONFIG.idleSpeed)*CONFIG.idleAmp : 0;
-      model.rotation.y = CONFIG.baseYaw + cx*CONFIG.yawRange + sway;
-      model.rotation.x = cy*CONFIG.pitchRange;
-      model.position.y = modelBaseY + Math.sin(t*1.1)*CONFIG.bobAmp; // breathing
-    }
-  }
-  renderer.render(scene,camera);
-  requestAnimationFrame(tick);
-}
-tick();
-window.__gobliReady = ()=> !!model;
-</script>
 
 <!-- ===================== DONATE: QR + copy, one per chain ===================== -->
 <!-- qrcode.js (defines window.GobliQR, called below) wraps qrcode-generator.js's
