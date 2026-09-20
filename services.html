@@ -8,7 +8,8 @@
 <meta name="theme-color" content="#0b0f0c">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://gobli.io/services">
+<!-- The content lives on the homepage; this URL is an alias for sharing. -->
+<link rel="canonical" href="https://gobli.io/">
 <meta property="og:title" content="Services | Gobli">
 <meta property="og:description" content="Seed phrase recovery, done by hand. 10-25% of what's recovered, nothing upfront, and nothing owed at all if the wallet doesn't open.">
 <meta property="og:image" content="https://gobli.io/assets/gobli_io_services.jpg">
@@ -18,19 +19,20 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://gobli.io/assets/gobli_io_services.jpg">
-<style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-    background:#0b0f0c;color:#e7f0e0;font-family:system-ui,sans-serif;text-align:center;padding:24px}
-  a{color:#9bd75a}
-</style>
+<link rel="stylesheet" href="assets/style.css?v=15">
 </head>
 <body>
-  <!-- "services" is a section of index.html, not a page of its own. It needs to
-       exist as a real file anyway: link-preview crawlers don't run JavaScript,
-       so without this they'd hit 404.html and get no og: tags at all. The tags
-       above are the whole point of the file; the script below hands off to the
-       homepage the same way 404.html does, and nav.js scrolls to the section. -->
-  <p>Taking you there&hellip; <a href="/#services">click here if nothing happens</a>.</p>
+  <!-- "services" is a section of index.html, not a page of its own, but it has to
+       exist as a real file: link-preview crawlers don't run JavaScript, so
+       without it they'd hit 404.html and get no og: tags at all. The redirect
+       below hands off to the homepage the same way 404.html does, and nav.js
+       scrolls to the section. The copy is here so the page still says something
+       if the redirect never fires. -->
+  <main class="legal-content" style="max-width:720px">
+    <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">Seed phrase recovery</h1>
+    <p>If a seed phrase is a few words short, the wallet isn't gone, it's behind a search. Gobli runs that search by hand. It's realistic where <strong>one to three words</strong> are missing, wrong or out of order, and beyond that only with a clue that narrows it down. The fee is 10-25% of what's recovered, set in a digital contract before any work starts. Nothing is payable upfront and nothing is owed at all if the wallet never opens.</p>
+    <p><a href="/#services">Continue to the services &rarr;</a></p>
+  </main>
   <script>
     sessionStorage.setItem('gobli-redirect-path', '/services');
     location.replace('/');

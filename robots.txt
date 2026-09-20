@@ -1,0 +1,16 @@
+# gobli.io
+
+User-agent: *
+Allow: /
+
+# The section aliases (/products, /services, /proof, /before-you-snipe) are
+# deliberately NOT disallowed: Twitter's and Facebook's crawlers honour
+# robots.txt, so blocking them would kill the link previews those pages exist
+# for. They carry <link rel="canonical"> to the homepage instead, which keeps
+# them out of the index without hiding them from preview bots.
+
+Sitemap: https://gobli.io/sitemap.xml
+
+# Content signals (Cloudflare/IETF format). Be findable and citable in AI
+# answers; do not consent to model training.
+Content-Signal: search=yes, ai-input=yes, ai-train=no

@@ -8,7 +8,8 @@
 <meta name="theme-color" content="#0b0f0c">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://gobli.io/proof">
+<!-- The content lives on the homepage; this URL is an alias for sharing. -->
+<link rel="canonical" href="https://gobli.io/">
 <meta property="og:title" content="Proof | Gobli">
 <meta property="og:description" content="Two unedited recordings, no cuts: the Manual Sniper and the Auto-Sniper doing the job.">
 <meta property="og:image" content="https://gobli.io/assets/gobli_io_proof.jpg">
@@ -18,19 +19,20 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://gobli.io/assets/gobli_io_proof.jpg">
-<style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-    background:#0b0f0c;color:#e7f0e0;font-family:system-ui,sans-serif;text-align:center;padding:24px}
-  a{color:#9bd75a}
-</style>
+<link rel="stylesheet" href="assets/style.css?v=15">
 </head>
 <body>
-  <!-- "proof" is a section of index.html, not a page of its own. It needs to
-       exist as a real file anyway: link-preview crawlers don't run JavaScript,
-       so without this they'd hit 404.html and get no og: tags at all. The tags
-       above are the whole point of the file; the script below hands off to the
-       homepage the same way 404.html does, and nav.js scrolls to the section. -->
-  <p>Taking you there&hellip; <a href="/#proof">click here if nothing happens</a>.</p>
+  <!-- "proof" is a section of index.html, not a page of its own, but it has to
+       exist as a real file: link-preview crawlers don't run JavaScript, so
+       without it they'd hit 404.html and get no og: tags at all. The redirect
+       below hands off to the homepage the same way 404.html does, and nav.js
+       scrolls to the section. The copy is here so the page still says something
+       if the redirect never fires. -->
+  <main class="legal-content" style="max-width:720px">
+    <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">Gobli, on video</h1>
+    <p>Two unedited screen recordings, no cuts. The first shows the <strong>Manual Sniper</strong> buying a token end to end from a contract pasted into Telegram, with the mint and the buy on screen so the transaction can be checked on-chain. The second shows the <strong>Auto-Sniper</strong> running on its own against rules set in advance, with nobody at the keyboard.</p>
+    <p><a href="/#proof">Continue to the recordings &rarr;</a></p>
+  </main>
   <script>
     sessionStorage.setItem('gobli-redirect-path', '/proof');
     location.replace('/');

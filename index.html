@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gobli - Self-Hosted Solana Snipers</title>
-<meta name="description" content="Gobli is a synthetic goblin sniper for Solana token launches. Paste a contract in Telegram, or set rules and let the Auto-Sniper fire on its own. Self-hosted, your keys never leave your machine.">
+<title>Gobli - Self-Hosted Solana Sniper Bots (Manual &amp; Auto)</title>
+<meta name="description" content="Self-hosted Solana sniper bots you run yourself. Paste a contract in Telegram, or set rules and let the Auto-Sniper fire on its own. $49 and $199, one-time.">
 <meta name="theme-color" content="#0b0f0c">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -23,7 +23,203 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=14">
+<link rel="stylesheet" href="assets/style.css?v=15">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gobli.io/#organization",
+      "name": "Gobli",
+      "url": "https://gobli.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gobli.io/assets/gobli_logo.png"
+      },
+      "description": "Gobli builds self-hosted Solana sniper bots that run on your own machine, so private keys never leave it.",
+      "sameAs": [
+        "https://x.com/gobliio",
+        "https://www.instagram.com/gobli.io",
+        "https://www.tiktok.com/@gobli.io",
+        "https://youtube.com/@Gobliio",
+        "https://t.me/goblivillage"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gobli.io/#website",
+      "url": "https://gobli.io/",
+      "name": "Gobli",
+      "publisher": {
+        "@id": "https://gobli.io/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://gobli.io/#gobli-sniper",
+      "name": "Gobli Sniper",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "Solana sniper bot",
+      "operatingSystem": "Linux, Windows, macOS",
+      "description": "Paste a contract in Telegram. I buy it through Jupiter in under 500ms and hand you one-tap preset sells. You call every shot. No chart-staring. No missed entries.",
+      "publisher": {
+        "@id": "https://gobli.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "49",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://gobli.io/products"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://gobli.io/#gobli-auto-sniper",
+      "name": "Gobli Auto-Sniper",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "Solana sniper bot",
+      "operatingSystem": "Linux, Windows, macOS",
+      "description": "Write the rules once, then go do something else. I watch pump.fun launches live and buy the ones that match, with no human in the loop and hard caps on what I'm allowed to spend.",
+      "publisher": {
+        "@id": "https://gobli.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "199",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://gobli.io/products"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://gobli.io/#seed-phrase-recovery",
+      "name": "Seed Phrase Recovery",
+      "serviceType": "Crypto wallet seed phrase recovery",
+      "provider": {
+        "@id": "https://gobli.io/#organization"
+      },
+      "description": "Recovery of a Solana wallet from an incomplete or incorrect seed phrase. Realistic where one to three words are missing, wrong or out of order. Paid 10-25% of what is recovered, nothing upfront, and nothing owed if the wallet does not open.",
+      "url": "https://gobli.io/services"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://gobli.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between the Manual and the Auto Sniper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Who pulls the trigger. With the Manual Sniper you paste a contract into Telegram and I buy it right then, so nothing happens unless you say so. With the Auto-Sniper you write the rules up front, a creator wallet to follow or a ticker to watch, and I buy on my own when a launch matches, whether or not you're at your desk. Same wallet model, same self-hosting, different trigger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can the Auto-Sniper actually buy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "pump.fun launches, live and verified in both directions. It watches new launches as they hit the chain and fires on the ones matching your rules. It starts in dry run, so it walks through the whole pipeline without spending anything until you deliberately turn it live, and it holds caps on how much it may spend per snipe and per day, a cooldown per creator, and a kill switch that drops every rule and sells every position in one command."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you ever see my private key?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. Both snipers are self-hosted and run on your own VPS. Your keys stay on your machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is Gobli self-hosted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because your wallet should stay under your control. We don't custody funds, store keys, or act as a middleman."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do you only accept crypto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Crypto is faster and has no borders. Banks can block, delay, or flag payments depending on your country, and that's not a problem we want between you and your purchase. SOL, ETH and BTC land directly, no middleman, no waiting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is a one-time price cheaper than the \"free\" bots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every transaction, that's ~2% per trade, buy and sell. Cycle just $10k through positions and you've already paid $200. Gobli costs $49 or $199. Once. Forever."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the seed phrase recovery work, and when do I pay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You tell me what's left of the phrase and what's missing, and I search the combinations until one opens the wallet. One to three missing or misordered words is the realistic range, more only if you have clues that narrow it down. Every case is different, so ask. The percentage and the terms go into a digital contract before I start, the fee comes out of what's recovered, and if nothing opens you owe nothing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the tools get updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Solana, Jupiter and the launchpads all change, sometimes with no warning, so the tools change with them. Buy once and the updates are yours, no subscription and no second invoice. New venues and features land the same way, and the Telegram is where they get announced first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are you selling the snipers if they work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nobody asks a shovel company why they don't mine gold themselves. Same here. Gobli still requires you to stay active and put your own capital at risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is Gobli AI-generated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because Gobli is designed to be a living digital mascot. AI lets us create new content quickly while keeping the character consistent. The goal here is the tools, not a mascot studio, so we're not burning time or budget on hand-drawn art for something that isn't concretely part of the business."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I need help?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Support is available through our Telegram."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Gobli Manual Sniper, a real snipe end to end",
+      "description": "An unedited screen recording of the Gobli Manual Sniper buying a Solana token from a contract address pasted into Telegram.",
+      "thumbnailUrl": "https://gobli.io/assets/proof_manual_poster.jpg",
+      "contentUrl": "https://gobli.io/assets/proof_manual.mp4",
+      "uploadDate": "2026-09-20",
+      "duration": "PT24S"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Gobli Auto-Sniper running on its own",
+      "description": "An unedited screen recording of the Gobli Auto-Sniper watching pump.fun launches and buying the ones matching its rules, with no human in the loop.",
+      "thumbnailUrl": "https://gobli.io/assets/proof_auto_poster.jpg",
+      "contentUrl": "https://gobli.io/assets/proof_auto.mp4",
+      "uploadDate": "2026-09-20",
+      "duration": "PT1M11S"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -71,7 +267,7 @@
       </div>
     </div>
 
-    <h1 id="hero-heading">Your rules.<br>My trigger.</h1>
+    <h1 id="hero-heading">Your rules.<br>My trigger.<span class="hero-sub">Self-hosted Solana sniper bots</span></h1>
     <p class="lede">A synthetic goblin who eats token launches in under 500ms. Paste one in yourself, or set
       the rules and let me hunt them down without you. Self-hosted, either way. Your keys never leave your
       machine. I wouldn't want them anyway.</p>
