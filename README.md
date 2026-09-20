@@ -57,11 +57,21 @@ assets/
                          Bump the ?v= query string on the poster="" attribute in index.html
                          whenever either is replaced, browsers cache by filename alone
                          (currently ?v=2).
-  og_banner.jpg          social preview image for index.html's og:image / twitter:image
-                         (link/card previews when the site is shared elsewhere). Center-cropped
-                         to the standard 1200x630 OG ratio and exported as JPEG q88 (~125KB) from
-                         the source art. Referenced via the live gobli.io URL in index.html's
-                         OG/twitter meta tags.
+  gobli_io*.jpg          link-preview images (og:image / twitter:image), one per shared URL,
+                         all 1200x630 JPEG q85 (~75KB). Sources are 1376x768, centre-cropped to
+                         the 1.91:1 ratio the platforms crop to anyway so the framing is ours:
+                           gobli_io.jpg           /
+                           gobli_io_products.jpg  /products
+                           gobli_io_services.jpg  /services
+                           gobli_io_proof.jpg     /proof
+                           gobli_io_before.jpg    /before-you-snipe
+                           gobli_io_how.jpg       /how-gobli-works
+                           gobli_io_donate.jpg    /donate
+                           gobli_io_tpd.jpg       /about, /terms, /privacy, /disclaimer
+                         Referenced by absolute gobli.io URL, which OG requires.
+  og_banner.jpg          previous shared preview image, and og_banner_donate.jpg the donate
+  og_banner_donate.jpg   one. Both unused since every page moved to a gobli_io* image; kept,
+                         not deleted.
   gobli_logo.png         flat brand mark — nav/footer icon
   gobli_sniper.png       Gobli taking aim down a sniper rifle — card art for the Manual Sniper,
                          on index.html and how-gobli-works.html. Downscaled from a 1024px master
