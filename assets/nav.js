@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     proof: '/proof',
     faq: '/before-you-snipe',
   };
+  // Own-property check: the URL hash is visitor input, and a plain `in`
+  // also matches inherited names like #constructor or #__proto__.
+  const isSection = (id) => Object.prototype.hasOwnProperty.call(SECTION_PATHS, id);
   const PATH_TO_SECTION = Object.fromEntries(
     Object.entries(SECTION_PATHS).map(([id, path]) => [path, id])
   );
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     const id = a.getAttribute('href').slice(1);
-    if (!(id in SECTION_PATHS)) return; // leave the #main skip-link alone
+    if (!isSection(id)) return; // leave the #main skip-link alone
     a.addEventListener('click', (e) => {
       e.preventDefault();
       history.pushState({ section: id }, '', SECTION_PATHS[id]);
@@ -76,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = redirectedPath || location.pathname;
     const idFromPath = PATH_TO_SECTION[path];
     const hashId = (location.hash || '').slice(1);
-    const idFromHash = hashId in SECTION_PATHS ? hashId : null;
+    const idFromHash = isSection(hashId) ? hashId : null;
     const id = idFromPath || idFromHash;
     if (!id) return;
     history.replaceState({ section: id }, '', SECTION_PATHS[id]);

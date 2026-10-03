@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gobli</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <style>
   body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
     background:#0b0f0c;color:#e7f0e0;font-family:system-ui,sans-serif;text-align:center;padding:24px}
@@ -20,9 +20,6 @@
        requested path and bounce to index.html, which reads it back out on
        load and scrolls to the matching section. -->
   <p>Redirecting&hellip; <a href="/">click here if nothing happens</a>.</p>
-  <script>
-    sessionStorage.setItem('gobli-redirect-path', location.pathname);
-    location.replace('/');
-  </script>
+  <script src="/assets/redirect.js?v=1"></script>
 </body>
 </html>

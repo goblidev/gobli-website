@@ -59,6 +59,12 @@ privacy.html            Legal > Privacy
 disclaimer.html         Legal > Disclaimer
 assets/
   style.css             shared design system + layout for every page above
+  home.js               index.html's 3D hero + buy popup (ES module)
+  donate.js             donate.html's QR codes + copy buttons, and the three
+                        donation addresses. Bump its ?v= in donate.html whenever an
+                        address changes so no browser keeps a stale copy.
+  redirect.js           hand-off used by 404.html and the four section aliases
+  nav.js                mobile menu + clean-URL section routing
   favicon.png           tightly-cropped goblin face, 48x48 — browser tab icon only
   apple-touch-icon.png  same art at 180x180 (Apple's standard size) — iOS/iPadOS home
                         screen icon, linked via &lt;link rel="apple-touch-icon"&gt; on
@@ -144,10 +150,43 @@ already points at `https://gobli.io/`.
 
 The Telegram links (`https://t.me/goblidev`) are the real invite link.
 
+## Security
+
+**No inline scripts.** Every executable script is a same-origin file in
+`assets/`, so the Content-Security-Policy can say `script-src 'self'` with no
+`'unsafe-inline'`. An inline `<script>` added to any page will be blocked by the
+browser. The JSON-LD block in `index.html` is fine: it's a data block, never
+executed, and CSP doesn't apply to it.
+
+Two path rules that are easy to break:
+
+- `assets/home.js` is an ES module. Its `import` paths resolve relative to the
+  module file (`./vendor/...`), but `CONFIG.modelURL` is handed to `fetch()`,
+  which resolves relative to the *page*, so it keeps its `./assets/` prefix.
+- `404.html` is served at whatever URL was missing, at any depth, so it must
+  load `/assets/redirect.js` with an absolute path.
+
+**Where the headers live.** CSP, HSTS, X-Frame-Options, X-Content-Type-Options,
+Referrer-Policy and Permissions-Policy are set by a Cloudflare Response Header
+Transform Rule, not in this repo. The intended CSP is:
+
+```
+default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+```
+
+`style-src` keeps `'unsafe-inline'` on purpose: the markup uses `style=""`
+attributes throughout, and inline CSS can't run code.
+
+**Cloudflare SSL mode stays "Full", not "Full (strict)".** GitHub has not issued
+a certificate for gobli.io: it checks that the domain resolves to GitHub's IPs,
+and behind Cloudflare's proxy it sees Cloudflare's instead. The origin therefore
+presents GitHub's generic `*.github.io` certificate, which "Full (strict)" would
+reject, taking the site down with a 526 error.
+
 ## The hero component
 
-`.gobli-stage` / `.gobli-glow` / `.gobli-canvas` / `.gobli-floor` and the entire
-hero `<script type="module">` block are lifted verbatim from the tested
+`.gobli-stage` / `.gobli-glow` / `.gobli-canvas` / `.gobli-floor` and the hero
+module script (now `assets/home.js`, see Security below) are lifted verbatim from the tested
 `gobli_hero_full.html` reference (the full-body model revision), including
 the tuned `CONFIG` constants (`baseYaw`, `yawRange`, `ease`, etc.). Don't
 retune these blind — they were measured against the actual model. The only
