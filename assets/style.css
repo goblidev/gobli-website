@@ -223,7 +223,10 @@ body{
 .proof{padding:56px 0}
 .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:1000px;margin-inline:auto}
 .proof-card{background:var(--bg-panel);border:2px solid var(--green);box-shadow:7px 7px 0 var(--purple);
-  padding:20px;display:flex;flex-direction:column;gap:12px}
+  padding:20px;display:flex;flex-direction:column;gap:12px;
+  transition:transform .12s ease, box-shadow .12s ease}
+/* same lift as the product cards */
+.proof-card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--purple)}
 .proof-video{width:100%;aspect-ratio:16/9;display:block;border:2px solid #0b0f0c;background:#000}
 .proof-kicker{font-family:var(--font-mono);font-weight:700;font-size:.7rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--green-soft)}
