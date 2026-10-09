@@ -1,4 +1,5 @@
-/* Homepage scripts: the 3D hero and the buy popup.
+/* Homepage script: the 3D hero. (The buy popup is assets/buy.js - kept
+   separate so a 3D failure can't take the buy buttons down with it.)
    Lives in its own file rather than inline in index.html so the site's
    Content-Security-Policy can forbid inline scripts.
    NOTE: import paths below resolve relative to THIS file (assets/), but
@@ -9,7 +10,8 @@
    model revision) per the build brief. Every line below this banner down
    to `window.__gobliReady = ...` is unchanged from the tested source,
    except the additive lines (marked) that hide the "summoning goblin…"
-   loading caption once the GLB loads, or surface a load error.
+   loading caption once the GLB loads, and show a still Gobli when the 3D
+   one can't appear (no WebGL, or the model failed to download).
    Do not retune the CONFIG values — they were measured against the model.
    ===================================================================== */
 import * as THREE from './vendor/three.module.js';
@@ -35,6 +37,34 @@ const CONFIG = {
 const stage  = document.getElementById('gobliStage');
 const canvas = document.getElementById('gobliCanvas');
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// --- additive: a still Gobli for when the 3D one can't appear. Without it a
+// visitor is left looking at "summoning goblin..." forever. Sized inline so
+// it doesn't depend on a fresh style.css. ---
+function showStill(){
+  const loadingEl = document.getElementById('gobliLoading');
+  if (loadingEl) loadingEl.style.display = 'none';
+  canvas.style.display = 'none';
+  if (stage.querySelector('.gobli-still')) return;
+  const still = document.createElement('img');
+  still.className = 'gobli-still';
+  still.src = './assets/pose_sniper.png';   // relative to the page, like modelURL
+  still.alt = 'Gobli, a hooded goblin holding a sniper rifle';
+  still.width = 480; still.height = 480;
+  still.style.cssText = 'position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain';
+  stage.appendChild(still);
+}
+// No WebGL (some old phones, locked-down browsers): three.js would throw on
+// the line below, so show the still and stop here.
+const hasWebGL = (()=>{
+  try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); }
+  catch { return false; }
+})();
+if (!hasWebGL) {
+  showStill();
+  throw new Error('No WebGL - showing the still Gobli instead of the 3D one');
+}
+// --- end additive ---
 
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -87,9 +117,15 @@ new GLTFLoader().load(CONFIG.modelURL, (gltf)=>{
   // --- end additive ---
 }, undefined, (e)=>{
   console.error('GLB load error', e);
-  // --- additive: surface the file://-vs-http:// footgun directly in the UI ---
-  const loadingEl = document.getElementById('gobliLoading');
-  if (loadingEl) loadingEl.textContent = 'gobli failed to load, serve over http://, not file://';
+  // --- additive: opened straight from disk, the model can never load - say
+  // so, for whoever is developing. Anywhere else it's a visitor on a bad
+  // connection, who gets the still Gobli instead of an instruction. ---
+  if (location.protocol === 'file:') {
+    const loadingEl = document.getElementById('gobliLoading');
+    if (loadingEl) loadingEl.textContent = 'gobli failed to load, serve over http://, not file://';
+  } else {
+    showStill();
+  }
   // --- end additive ---
 });
 }
@@ -151,64 +187,3 @@ function tick(){
 }
 tick();
 window.__gobliReady = ()=> !!model;
-
-/* =====================================================================
-   Site interactions: buy popup (focus trap, ESC to close, click-outside).
-   ===================================================================== */
-
-const overlay  = document.getElementById('drawerOverlay');
-const drawerEl = document.getElementById('drawer');
-const closeBtn = document.getElementById('drawerClose');
-
-// One drawer serves every product and service. Each trigger carries its own
-// copy in data- attributes; the fields left in the markup are the fallback.
-const drawerFields = {
-  product: document.getElementById('drawerTitle'),
-  price:   document.getElementById('drawerSub'),
-  note:    document.getElementById('drawerNote'),
-  trust:   document.getElementById('drawerTrust'),
-};
-const drawerDefaults = Object.fromEntries(
-  Object.entries(drawerFields).map(([k, el]) => [k, el.textContent])
-);
-
-let lastFocused = null;
-
-function onKeydown(e){
-  if (e.key === 'Escape') { closeDrawer(); return; }
-  if (e.key === 'Tab') {
-    const focusables = drawerEl.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
-    if (!focusables.length) return;
-    const first = focusables[0], last = focusables[focusables.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-  }
-}
-
-function fillDrawer(data){
-  // Entities in the data- attributes are already decoded by the parser, so
-  // textContent is both correct and safe here.
-  Object.keys(drawerFields).forEach((k) => {
-    drawerFields[k].textContent = (data && data[k]) || drawerDefaults[k];
-  });
-}
-
-function openDrawer(){
-  lastFocused = document.activeElement;
-  overlay.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
-  closeBtn.focus();
-  document.addEventListener('keydown', onKeydown);
-}
-function closeDrawer(){
-  overlay.classList.remove('is-open');
-  document.body.style.overflow = '';
-  document.removeEventListener('keydown', onKeydown);
-  if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
-}
-
-document.querySelectorAll('[data-open-drawer]').forEach((btn) => {
-  btn.addEventListener('click', () => { fillDrawer(btn.dataset); openDrawer(); });
-});
-closeBtn.addEventListener('click', closeDrawer);
-overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDrawer(); });

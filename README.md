@@ -59,7 +59,9 @@ privacy.html            Legal > Privacy
 disclaimer.html         Legal > Disclaimer
 assets/
   style.css             shared design system + layout for every page above
-  home.js               index.html's 3D hero + buy popup (ES module)
+  home.js               index.html's 3D hero (ES module), with a still-image fallback
+  buy.js                index.html's buy popup - separate from home.js so a 3D
+                        failure (no WebGL, three.js download lost) can't break buying
   donate.js             donate.html's QR codes + copy buttons, and the three
                         donation addresses. Bump its ?v= in donate.html whenever an
                         address changes so no browser keeps a stale copy.
