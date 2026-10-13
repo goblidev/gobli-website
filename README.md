@@ -92,19 +92,17 @@ assets/
   og_banner_donate.jpg   one. Both unused since every page moved to a gobli_io* image; kept,
                          not deleted.
   gobli_logo.png         flat brand mark — nav/footer icon
-  gobli_sniper.png       Gobli taking aim down a sniper rifle — card art for the Manual Sniper,
+  gobli_sniper.png       Gobli taking aim down a sniper rifle — card art for Gobli Pro,
                          on index.html and how-gobli-works.html. Downscaled from a 1024px master
                          to 480x480 and quantized to a 256-colour palette (~31KB instead of
                          ~185KB); indistinguishable at the 150px it actually renders at.
-  gobli_auto_sniper.png  Gobli asleep cradling the rifle — card art for the Auto-Sniper, same
+  gobli_auto_sniper.png  Gobli asleep cradling the rifle — card art for Gobli Free, same
                          two pages, same downscale/quantize treatment.
   gobli_seed.png         Gobli hunched over a laptop — art for the seed phrase recovery
                          service on index.html, same downscale/quantize treatment.
   gobli-guide.pdf        The Gobli guide (Free and Pro), linked from how-gobli-works.html.
-                         Not in the repo until it's generated - the download button 404s
-                         until then.
-  gobli-free.zip         The Gobli Free package, the "Download free" button on the home page
-                         and How It Works. Replace it with every new Gobli Free build.
+  gobli-free.zip         The Gobli Free package, the "Download free" button on the home page.
+                         Replace it with every new Gobli Free build.
   gobli-manual-sniper.pdf  Old Manual Sniper guide, no longer linked. Kept so old links work.
   gobli-auto-sniper.pdf    Old Auto-Sniper guide, no longer linked. Both were the old
                          post-purchase setup guides, published here as the public explainers.
