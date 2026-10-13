@@ -52,7 +52,7 @@ index.html              home page: hero, products, services, FAQ, buy popup.
                         if you edit an FAQ answer, regenerate the block rather than
                         hand-editing it: Google requires the schema to match what's on
                         screen.
-how-gobli-works.html    How It Works: Free vs Pro, how each works, Helius free vs paid plan, the guide PDF
+how-gobli-works.html    How It Works: a short intro and the guide PDF download (the guide holds the detail)
 404.html                clean-URL fallback for direct/refreshed deep links
 about.html              Company > About
 donate.html             Support > Donate (SOL/ETH/BTC tip QR + copy)
