@@ -178,7 +178,6 @@ body{
 .card.is-locked .card-kicker{color:var(--bone-dim)}
 .card.is-locked .specs{border-top:2px solid var(--green-deep)}
 .card .price{font-family:var(--font-mono);font-weight:700;font-size:1.7rem;text-align:center}
-.card .price-cad{margin-left:8px;font-size:.8rem;font-weight:500;color:var(--bone-dim)}
 .card .desc{color:var(--bone-dim);line-height:1.6;font-size:.93rem;text-align:center}
 .card .specs{font-family:var(--font-mono);font-size:.76rem;color:var(--bone-dim);list-style:none;
   padding:14px 0 0;margin:0;display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--green)}
