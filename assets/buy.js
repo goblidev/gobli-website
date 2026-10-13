@@ -12,31 +12,15 @@ const drawerEl = document.getElementById('drawer');
 const closeBtn = document.getElementById('drawerClose');
 
 // One drawer serves every product and service. Each trigger carries its own
-// copy in data- attributes; what's left in the markup (Gobli Pro's copy) is
-// the fallback.
+// copy in data- attributes; the fields left in the markup are the fallback.
 const drawerFields = {
   product: document.getElementById('drawerTitle'),
   price:   document.getElementById('drawerSub'),
   note:    document.getElementById('drawerNote'),
+  trust:   document.getElementById('drawerTrust'),
 };
 const drawerDefaults = Object.fromEntries(
   Object.entries(drawerFields).map(([k, el]) => [k, el.textContent])
-);
-
-// The two lists take their items from data-steps / data-never, separated by
-// "|". The "never" items differ per product: seed recovery can't promise it
-// will never ask about a seed phrase.
-const drawerLists = {
-  steps: document.getElementById('drawerSteps'),
-  never: document.getElementById('drawerNever'),
-};
-const listDefaults = Object.fromEntries(
-  Object.entries(drawerLists).map(([k, el]) => [k, Array.from(el.children, (li) => li.textContent.trim())])
-);
-// New items are copies of the first one in the markup, so the never-list's
-// x icon comes along without being redrawn here.
-const listItemTemplates = Object.fromEntries(
-  Object.entries(drawerLists).map(([k, el]) => [k, el.firstElementChild.cloneNode(true)])
 );
 
 let lastFocused = null;
@@ -57,14 +41,6 @@ function fillDrawer(data){
   // textContent is both correct and safe here.
   Object.keys(drawerFields).forEach((k) => {
     drawerFields[k].textContent = (data && data[k]) || drawerDefaults[k];
-  });
-  Object.keys(drawerLists).forEach((k) => {
-    const items = (data && data[k]) ? data[k].split('|') : listDefaults[k];
-    drawerLists[k].replaceChildren(...items.map((text) => {
-      const li = listItemTemplates[k].cloneNode(true);
-      li.querySelector('span').textContent = text.trim();
-      return li;
-    }));
   });
 }
 
