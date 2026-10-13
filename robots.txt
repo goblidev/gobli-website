@@ -3,7 +3,7 @@
 User-agent: *
 Allow: /
 
-# The section aliases (/products, /services, /proof, /before-you-snipe) are
+# The section aliases (/products, /services, /before-you-snipe) are
 # deliberately NOT disallowed: Twitter's and Facebook's crawlers honour
 # robots.txt, so blocking them would kill the link previews those pages exist
 # for. They carry <link rel="canonical"> to the homepage instead, which keeps

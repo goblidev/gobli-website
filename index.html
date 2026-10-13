@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gobli - Self-Hosted Solana Sniper Bots (Manual &amp; Auto)</title>
-<meta name="description" content="Self-hosted Solana sniper bots you run yourself. Paste a contract in Telegram, or set rules and let the Auto-Sniper fire on its own. $49 and $199, one-time.">
+<title>Gobli - Self-Hosted Solana Sniper Bot (Free &amp; Pro)</title>
+<meta name="description" content="A self-hosted Solana sniper bot you run yourself. Paste a contract in Telegram, or set rules and let it fire on its own. Gobli Free costs nothing; Gobli Pro is $199, one-time.">
 <meta name="theme-color" content="#0b0f0c">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://gobli.io/">
 <meta property="og:title" content="Gobli — Self-Hosted Solana Snipers">
-<meta property="og:description" content="Your rules. My trigger. Paste a launch in yourself, or set the rules and Gobli snipes it without you. Self-hosted Solana snipers. Your keys never leave your machine.">
+<meta property="og:description" content="Your rules. My trigger. Paste a launch in yourself, or set the rules and Gobli snipes it without you. Try Gobli Free, go Pro when you're ready. Your keys never leave your machine.">
 <meta property="og:image" content="https://gobli.io/assets/gobli_io.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=17">
+<link rel="stylesheet" href="assets/style.css?v=18">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,31 +58,31 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://gobli.io/#gobli-sniper",
-      "name": "Gobli Sniper",
+      "@id": "https://gobli.io/#gobli-free",
+      "name": "Gobli Free",
       "applicationCategory": "FinanceApplication",
       "applicationSubCategory": "Solana sniper bot",
       "operatingSystem": "Linux, Windows, macOS",
-      "description": "Paste a contract in Telegram. I buy it through Jupiter in under 500ms and hand you one-tap preset sells. You call every shot. No chart-staring. No missed entries.",
+      "description": "Both Gobli snipers in one free, self-hosted Telegram bot: paste a contract to buy, or set one rule and let it watch pump.fun launches. Starts in paper mode and runs without a private key.",
       "publisher": {
         "@id": "https://gobli.io/#organization"
       },
       "offers": {
         "@type": "Offer",
-        "price": "49",
+        "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://gobli.io/products"
+        "url": "https://gobli.io/how-gobli-works"
       }
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://gobli.io/#gobli-auto-sniper",
-      "name": "Gobli Auto-Sniper",
+      "@id": "https://gobli.io/#gobli-pro",
+      "name": "Gobli Pro",
       "applicationCategory": "FinanceApplication",
       "applicationSubCategory": "Solana sniper bot",
       "operatingSystem": "Linux, Windows, macOS",
-      "description": "Write the rules once, then go do something else. I watch pump.fun launches live and buy the ones that match, with no human in the loop and hard caps on what I'm allowed to spend.",
+      "description": "The Manual Sniper and the Auto-Sniper side by side: paste a contract and it buys in under 500ms, or write rules and it buys pump.fun launches with no human in the loop, inside hard caps. Self-hosted, full source.",
       "publisher": {
         "@id": "https://gobli.io/#organization"
       },
@@ -111,10 +111,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What's the difference between the Manual and the Auto Sniper?",
+          "name": "What's the difference between Gobli Free and Gobli Pro?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Who pulls the trigger. With the Manual Sniper you paste a contract into Telegram and I buy it right then, so nothing happens unless you say so. With the Auto-Sniper you write the rules up front, a creator wallet to follow or a ticker to watch, and I buy on my own when a launch matches, whether or not you're at your desk. Same wallet model, same self-hosting, different trigger."
+            "text": "Speed and reach. Both have the Manual Sniper and the Auto-Sniper, both are self-hosted, both start in paper mode. Free runs one sniper at a time, buys up to 0.1 SOL, holds three positions and one auto rule, and routes every trade through Jupiter the standard way. Pro runs both side by side with no caps on what you trade by hand, buys pump.fun coins straight from the curve, sends through Helius Sender, and adds unlimited rules, finer filters and PnL cards. Free shows you how I work. Pro is me at full speed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Manual or Auto, what's the difference?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Who pulls the trigger. With the Manual Sniper you paste a contract into Telegram and I buy it right then, so nothing happens unless you say so. With the Auto-Sniper you write the rules up front, a creator wallet to follow or a ticker to watch, and I buy on my own when a launch matches, whether or not you're at your desk. Both builds have both. Pro runs them at the same time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a paid Helius plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Helius is the Solana data provider I talk to, and its free plan runs both Gobli Free and Gobli Pro: every launch is seen and every buy goes out. A paid Helius plan only changes how early I see a launch. With one, Pro also listens to Helius' pre-execution feed and gets in sooner. Upgrade the same key and restart, nothing else to change."
           }
         },
         {
@@ -130,7 +146,7 @@
           "name": "Do you ever see my private key?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Never. Both snipers are self-hosted and run on your own VPS. Your keys stay on your machine."
+            "text": "Never. Both builds are self-hosted and run on your own machine. Your keys stay there. Gobli Free even runs without one: in paper mode it prices every trade live and sends nothing."
           }
         },
         {
@@ -154,7 +170,15 @@
           "name": "Why is a one-time price cheaper than the \"free\" bots?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every transaction, that's ~2% per trade, buy and sell. Cycle just $10k through positions and you've already paid $200. Gobli costs $49 or $199. Once. Forever."
+            "text": "Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every transaction, that's ~2% per trade, buy and sell. Cycle just $10k through positions and you've already paid $200. Gobli Free takes no cut at all, and Gobli Pro costs $199. Once. Forever."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I move from Free to Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any time. Message us, pay once, and you get the Pro download. Your Helius key, Telegram bot and wallet carry straight over, and Pro's setup page writes its settings file in a minute."
           }
         },
         {
@@ -170,7 +194,7 @@
           "name": "Do the tools get updates?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Solana, Jupiter and the launchpads all change, sometimes with no warning, so the tools change with them. Buy once and the updates are yours, no subscription and no second invoice. New venues and features land the same way, and the Telegram is where they get announced first."
+            "text": "Yes. Solana, Jupiter and the launchpads all change, sometimes with no warning, so the tools change with them. Buy Pro once and the updates are yours, no subscription and no second invoice. Free gets updated too. New venues and features land the same way, and the Telegram is where they get announced first."
           }
         },
         {
@@ -198,24 +222,6 @@
           }
         }
       ]
-    },
-    {
-      "@type": "VideoObject",
-      "name": "Gobli Manual Sniper, a real snipe end to end",
-      "description": "An unedited screen recording of the Gobli Manual Sniper buying a Solana token from a contract address pasted into Telegram.",
-      "thumbnailUrl": "https://gobli.io/assets/proof_manual_poster.jpg",
-      "contentUrl": "https://gobli.io/assets/proof_manual.mp4",
-      "uploadDate": "2026-09-20",
-      "duration": "PT24S"
-    },
-    {
-      "@type": "VideoObject",
-      "name": "Gobli Auto-Sniper running on its own",
-      "description": "An unedited screen recording of the Gobli Auto-Sniper watching pump.fun launches and buying the ones matching its rules, with no human in the loop.",
-      "thumbnailUrl": "https://gobli.io/assets/proof_auto_poster.jpg",
-      "contentUrl": "https://gobli.io/assets/proof_auto.mp4",
-      "uploadDate": "2026-09-20",
-      "duration": "PT1M11S"
     }
   ]
 }
@@ -230,7 +236,6 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="#products">Products</a>
       <a href="#services">Services</a>
-      <a href="#proof">Proof</a>
       <a href="how-gobli-works">How It Works</a>
       <a href="#faq">Before You Snipe</a>
     </nav>
@@ -241,7 +246,6 @@
         <div class="nav-mobile-panel">
           <a href="#products">Products</a>
           <a href="#services">Services</a>
-          <a href="#proof">Proof</a>
           <a href="how-gobli-works">How It Works</a>
           <a href="#faq">Before You Snipe</a>
         </div>
@@ -255,7 +259,7 @@
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="hero" aria-labelledby="hero-heading">
   <div class="wrap hero-inner">
-    <p class="eyebrow">SOLANA &middot; MANUAL &amp; AUTO &middot; SUB-500MS</p>
+    <p class="eyebrow">SOLANA &middot; MANUAL + AUTO &middot; FREE &amp; PRO</p>
 
     <div class="hero-stage-wrap">
       <div class="gobli-stage" id="gobliStage">
@@ -267,10 +271,10 @@
       </div>
     </div>
 
-    <h1 id="hero-heading">Your rules.<br>My trigger.<span class="hero-sub">Self-hosted Solana sniper bots</span></h1>
+    <h1 id="hero-heading">Your rules.<br>My trigger.<span class="hero-sub">Self-hosted Solana sniper bot</span></h1>
     <p class="lede">A synthetic goblin who eats token launches in under 500ms. Paste one in yourself, or set
-      the rules and let me hunt them down without you. Self-hosted, either way. Your keys never leave your
-      machine. I wouldn't want them anyway.</p>
+      the rules and let me hunt them down without you. Try me free, go Pro when you've seen enough.
+      Self-hosted, either way. Your keys never leave your machine. I wouldn't want them anyway.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#products">Put me to work</a>
       <a class="btn btn-ghost" href="https://t.me/goblivillage" target="_blank" rel="noopener">Join the Telegram</a>
@@ -284,64 +288,58 @@
     <div class="section-head">
       <p class="eyebrow">The arsenal</p>
       <h2 id="products-heading">Pick your weapon</h2>
-      <p>Two snipers, same trigger finger. The only question is who pulls it.</p>
+      <p>Same goblin, two leashes. Try me for free, then take the leash off.</p>
     </div>
 
     <div class="cards">
-      <!-- Card 1 - MANUAL -->
+      <!-- Card 1 - FREE -->
       <article class="card is-live">
         <div class="card-art-wrap">
           <img class="card-art" src="assets/gobli_sniper.png" alt="Gobli taking aim down a sniper rifle" width="480" height="480" loading="lazy" decoding="async">
         </div>
-        <span class="card-kicker">Manual</span>
-        <h3>Gobli Sniper</h3>
-        <p class="price">$49</p>
-        <p class="desc">Paste a contract in Telegram. I buy it through Jupiter in under 500ms and hand you
-          one-tap preset sells. You call every shot. No chart-staring. No missed entries.</p>
+        <span class="card-kicker">Free</span>
+        <h3>Gobli Free</h3>
+        <p class="price">$0</p>
+        <p class="desc">Both snipers on a short leash. Paste a contract or set one rule, watch me work in paper
+          mode without even giving me a key, then trade small for real. No fee, no cut, no catch.</p>
         <ul class="specs">
-          <li>Paste a mint, buy in under 500ms</li>
-          <li>Jupiter swaps</li>
-          <li>Helius Sender (staked broadcast)</li>
-          <li>Preset sell buttons + TP/SL</li>
+          <li>Manual + Auto in one bot</li>
+          <li>Paper mode, no private key needed</li>
+          <li>Buys up to 0.1 SOL</li>
+          <li>One auto rule at a time</li>
           <li>Full source included</li>
           <li>Self-hosted</li>
         </ul>
         <div class="card-cta">
-          <button class="btn btn-primary" style="width:100%" type="button"
-            data-open-drawer
-            data-product="Gobli Sniper"
-            data-price="$49 &middot; message us to buy"
-            data-note="Tell me you want the Manual Sniper and I'll get you sorted. No forms, no waiting on a support ticket.">
-            Snipe with Gobli
-          </button>
+          <a class="btn btn-primary" style="width:100%" href="assets/gobli-free.zip" download>Download free</a>
         </div>
       </article>
 
-      <!-- Card 2 - AUTO -->
+      <!-- Card 2 - PRO -->
       <article class="card is-live">
         <div class="card-art-wrap">
           <img class="card-art" src="assets/gobli_auto_sniper.png" alt="Gobli asleep, cradling a sniper rifle" width="480" height="480" loading="lazy" decoding="async">
         </div>
-        <span class="card-kicker">Auto</span>
-        <h3>Gobli Auto-Sniper</h3>
+        <span class="card-kicker">Pro</span>
+        <h3>Gobli Pro</h3>
         <p class="price">$199</p>
-        <p class="desc">Write the rules once, then go do something else. I watch pump.fun launches live and
-          buy the ones that match, with no human in the loop and hard caps on what I'm allowed to spend.</p>
+        <p class="desc">Paste a contract and I buy it in under 500ms, or write the rules and I hunt launches
+          without you. Both at once, full speed, with hard caps on what the auto side may spend.</p>
         <ul class="specs">
-          <li>Rules by creator wallet or ticker</li>
-          <li>Live pump.fun launch feed</li>
-          <li>Buys with no human in the loop</li>
-          <li>Risk caps, cooldowns, kill switch</li>
-          <li>Full source included</li>
-          <li>Self-hosted</li>
+          <li>Manual + Auto, side by side</li>
+          <li>Paste a mint, buy in under 500ms</li>
+          <li>Direct pump.fun buys + Jupiter</li>
+          <li>Helius Sender (staked broadcast)</li>
+          <li>Rules, risk caps, kill switch, PnL cards</li>
+          <li>Full source, self-hosted</li>
         </ul>
         <div class="card-cta">
           <button class="btn btn-primary" style="width:100%" type="button"
             data-open-drawer
-            data-product="Gobli Auto-Sniper"
-            data-price="$199 &middot; message us to buy"
-            data-note="Tell me you want the Auto-Sniper and I'll get you sorted. No forms, no waiting on a support ticket.">
-            Let Gobli hunt
+            data-product="Gobli Pro"
+            data-price="$199 once &middot; message us to buy"
+            data-note="Tell me you want Gobli Pro and I'll get you sorted. No forms, no waiting on a support ticket.">
+            Go Pro
           </button>
         </div>
       </article>
@@ -404,34 +402,6 @@
   </div>
 </section>
 
-<!-- ===================== PROOF ===================== -->
-<section class="proof" id="proof" aria-labelledby="proof-heading">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Receipts</p>
-      <h2 id="proof-heading">It exists. It works.</h2>
-      <p>One recording each, no cuts. Watch them do the job.</p>
-    </div>
-
-    <div class="proof-grid">
-      <article class="proof-card">
-        <video class="proof-video" src="assets/proof_manual.mp4?v=2" poster="assets/proof_manual_poster.jpg?v=2"
-          controls playsinline preload="metadata"></video>
-        <span class="proof-kicker">Manual</span>
-        <p>A real snipe, end to end. The mint and the buy are on screen, so you can pull the transaction up
-          on-chain and check it yourself.</p>
-      </article>
-
-      <article class="proof-card">
-        <video class="proof-video" src="assets/proof_auto.mp4" poster="assets/proof_auto_poster.jpg?v=2"
-          controls playsinline preload="metadata"></video>
-        <span class="proof-kicker">Auto</span>
-        <p>Rules set, then hands off. This is it running on its own, with nobody at the keyboard.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== FAQ ===================== -->
 <section class="faq" id="faq" aria-labelledby="faq-heading">
   <div class="wrap">
@@ -441,69 +411,90 @@
     </div>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What's the difference between the Manual and the Auto Sniper?</summary>
-        <p class="faq-a">Who pulls the trigger. With the Manual Sniper you paste a contract into Telegram
-          and I buy it right then, so nothing happens unless you say so. With the Auto-Sniper you write the
-          rules up front, a creator wallet to follow or a ticker to watch, and I buy on my own when a launch
-          matches, whether or not you're at your desk. Same wallet model, same self-hosting, different
-          trigger.</p>
+        <summary>What's the difference between Gobli Free and Gobli Pro?</summary>
+        <p class="faq-a">Speed and reach. Both have the Manual Sniper and the Auto-Sniper, both are self-hosted, both
+          start in paper mode. Free runs one sniper at a time, buys up to 0.1 SOL, holds three positions
+          and one auto rule, and routes every trade through Jupiter the standard way. Pro runs both side
+          by side with no caps on what you trade by hand, buys pump.fun coins straight from the curve,
+          sends through Helius Sender, and adds unlimited rules, finer filters and PnL cards. Free shows
+          you how I work. Pro is me at full speed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Manual or Auto, what's the difference?</summary>
+        <p class="faq-a">Who pulls the trigger. With the Manual Sniper you paste a contract into Telegram and I buy it
+          right then, so nothing happens unless you say so. With the Auto-Sniper you write the rules up
+          front, a creator wallet to follow or a ticker to watch, and I buy on my own when a launch
+          matches, whether or not you're at your desk. Both builds have both. Pro runs them at the same
+          time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need a paid Helius plan?</summary>
+        <p class="faq-a">No. Helius is the Solana data provider I talk to, and its free plan runs both Gobli Free and
+          Gobli Pro: every launch is seen and every buy goes out. A paid Helius plan only changes how
+          early I see a launch. With one, Pro also listens to Helius' pre-execution feed and gets in
+          sooner. Upgrade the same key and restart, nothing else to change.</p>
       </details>
       <details class="faq-item">
         <summary>What can the Auto-Sniper actually buy?</summary>
-        <p class="faq-a">pump.fun launches, live and verified in both directions. It watches new launches as
-          they hit the chain and fires on the ones matching your rules. It starts in dry run, so it walks
-          through the whole pipeline without spending anything until you deliberately turn it live, and it
-          holds caps on how much it may spend per snipe and per day, a cooldown per creator, and a kill
-          switch that drops every rule and sells every position in one command.</p>
+        <p class="faq-a">pump.fun launches, live and verified in both directions. It watches new launches as they hit
+          the chain and fires on the ones matching your rules. It starts in dry run, so it walks through
+          the whole pipeline without spending anything until you deliberately turn it live, and it holds
+          caps on how much it may spend per snipe and per day, a cooldown per creator, and a kill switch
+          that drops every rule and sells every position in one command.</p>
       </details>
       <details class="faq-item">
         <summary>Do you ever see my private key?</summary>
-        <p class="faq-a">Never. Both snipers are self-hosted and run on your own VPS. Your keys stay on your
-          machine.</p>
+        <p class="faq-a">Never. Both builds are self-hosted and run on your own machine. Your keys stay there. Gobli
+          Free even runs without one: in paper mode it prices every trade live and sends nothing.</p>
       </details>
       <details class="faq-item">
         <summary>Why is Gobli self-hosted?</summary>
-        <p class="faq-a">Because your wallet should stay under your control. We don't custody funds,
-          store keys, or act as a middleman.</p>
+        <p class="faq-a">Because your wallet should stay under your control. We don't custody funds, store keys, or act
+          as a middleman.</p>
       </details>
       <details class="faq-item">
         <summary>Why do you only accept crypto?</summary>
-        <p class="faq-a">Crypto is faster and has no borders. Banks can block, delay, or flag
-          payments depending on your country, and that's not a problem we want between you and your
-          purchase. SOL, ETH and BTC land directly, no middleman, no waiting.</p>
+        <p class="faq-a">Crypto is faster and has no borders. Banks can block, delay, or flag payments depending on
+          your country, and that's not a problem we want between you and your purchase. SOL, ETH and BTC
+          land directly, no middleman, no waiting.</p>
       </details>
       <details class="faq-item">
         <summary>Why is a one-time price cheaper than the "free" bots?</summary>
-        <p class="faq-a">Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every
-          transaction, that's ~2% per trade, buy and sell. Cycle just $10k through positions and
-          you've already paid $200. Gobli costs $49 or $199. Once. Forever.</p>
+        <p class="faq-a">Because free isn't free. GMGN, Trojan, BonkBot and the rest skim ~1% on every transaction,
+          that's ~2% per trade, buy and sell. Cycle just $10k through positions and you've already paid
+          $200. Gobli Free takes no cut at all, and Gobli Pro costs $199. Once. Forever.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I move from Free to Pro?</summary>
+        <p class="faq-a">Any time. Message us, pay once, and you get the Pro download. Your Helius key, Telegram bot
+          and wallet carry straight over, and Pro's setup page writes its settings file in a minute.</p>
       </details>
       <details class="faq-item">
         <summary>How does the seed phrase recovery work, and when do I pay?</summary>
-        <p class="faq-a">You tell me what's left of the phrase and what's missing, and I search the
-          combinations until one opens the wallet. One to three missing or misordered words is the
-          realistic range, more only if you have clues that narrow it down. Every case is different, so
-          ask. The percentage and the terms go into a digital contract before I start, the fee comes out
-          of what's recovered, and if nothing opens you owe nothing.</p>
+        <p class="faq-a">You tell me what's left of the phrase and what's missing, and I search the combinations until
+          one opens the wallet. One to three missing or misordered words is the realistic range, more
+          only if you have clues that narrow it down. Every case is different, so ask. The percentage
+          and the terms go into a digital contract before I start, the fee comes out of what's
+          recovered, and if nothing opens you owe nothing.</p>
       </details>
       <details class="faq-item">
         <summary>Do the tools get updates?</summary>
-        <p class="faq-a">Yes. Solana, Jupiter and the launchpads all change, sometimes with no warning, so
-          the tools change with them. Buy once and the updates are yours, no subscription and no second
-          invoice. New venues and features land the same way, and the Telegram is where they get announced
-          first.</p>
+        <p class="faq-a">Yes. Solana, Jupiter and the launchpads all change, sometimes with no warning, so the tools
+          change with them. Buy Pro once and the updates are yours, no subscription and no second
+          invoice. Free gets updated too. New venues and features land the same way, and the Telegram is
+          where they get announced first.</p>
       </details>
       <details class="faq-item">
         <summary>Why are you selling the snipers if they work?</summary>
-        <p class="faq-a">Nobody asks a shovel company why they don't mine gold themselves. Same here.
-          Gobli still requires you to stay active and put your own capital at risk.</p>
+        <p class="faq-a">Nobody asks a shovel company why they don't mine gold themselves. Same here. Gobli still
+          requires you to stay active and put your own capital at risk.</p>
       </details>
       <details class="faq-item">
         <summary>Why is Gobli AI-generated?</summary>
-        <p class="faq-a">Because Gobli is designed to be a living digital mascot. AI lets us create new
-          content quickly while keeping the character consistent. The goal here is the tools, not a
-          mascot studio, so we're not burning time or budget on hand-drawn art for something that isn't
-          concretely part of the business.</p>
+        <p class="faq-a">Because Gobli is designed to be a living digital mascot. AI lets us create new content quickly
+          while keeping the character consistent. The goal here is the tools, not a mascot studio, so
+          we're not burning time or budget on hand-drawn art for something that isn't concretely part of
+          the business.</p>
       </details>
       <details class="faq-item">
         <summary>What if I need help?</summary>
@@ -531,7 +522,6 @@
       <ul class="footer-links">
         <li><a href="#products">Products</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#proof">Proof</a></li>
         <li><a href="how-gobli-works">How It Works</a></li>
         <li><a href="#faq">Before You Snipe</a></li>
       </ul>

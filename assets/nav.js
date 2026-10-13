@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------------------------------------------
 // Clean-URL section navigation (index.html only - pages without a #hero
 // element skip this entirely). Rewrites in-page anchor jumps (#services,
-// #proof, ...) to real-looking paths (/services, /proof, ...) via the
+// #faq, ...) to real-looking paths (/services, /before-you-snipe, ...) via the
 // History API instead of leaving a "#hash" in the address bar. GitHub
 // Pages has no server-side router, so 404.html plus the DOMContentLoaded
 // handler below fake one: a fresh visit, refresh, or shared link to one
@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hero: '/',
     products: '/products',
     services: '/services',
-    proof: '/proof',
     faq: '/before-you-snipe',
   };
   // Own-property check: the URL hash is visitor input, and a plain `in`

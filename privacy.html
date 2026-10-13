@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=17">
+<link rel="stylesheet" href="assets/style.css?v=18">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -33,7 +33,6 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="/#products">Products</a>
       <a href="/#services">Services</a>
-      <a href="/#proof">Proof</a>
       <a href="how-gobli-works">How It Works</a>
       <a href="/#faq">Before You Snipe</a>
     </nav>
@@ -44,7 +43,6 @@
         <div class="nav-mobile-panel">
           <a href="/#products">Products</a>
           <a href="/#services">Services</a>
-          <a href="/#proof">Proof</a>
           <a href="how-gobli-works">How It Works</a>
           <a href="/#faq">Before You Snipe</a>
         </div>
@@ -57,24 +55,26 @@
   <div class="legal-content">
     <a class="back-link" href="/">&larr; Back to Gobli</a>
     <h1>Privacy Policy</h1>
-    <p class="page-subtitle">Last updated: September 20, 2026</p>
+    <p class="page-subtitle">Last updated: October 13, 2026</p>
 
     <h2>1. Overview</h2>
     <p>Gobli is deliberately built to collect as little about you as possible. This site is a static page
-      with no account system, no analytics, and no tracking pixels. The Software itself is self-hosted,
-      it runs on your own VPS, not ours, so we never see your activity, your wallet, or your trades.</p>
+      with no account system, no analytics, and no tracking pixels. The Software itself, Gobli Free and
+      Gobli Pro alike, is self-hosted: it runs on your own machine or VPS, not ours, and sends nothing to
+      us, so we never see your activity, your wallet, or your trades.</p>
 
     <h2>2. Information We Don't Collect</h2>
     <p>We don't require an account or email to buy or use Gobli. We don't run server-side analytics,
       advertising pixels, or session trackers on this website. We never ask for, and never want, a working
-      seed phrase or a private key.</p>
+      seed phrase or a private key. Downloading Gobli Free asks for nothing either:
+      it is a plain file served by this website, and we don't record who downloads it.</p>
     <p>The one deliberate exception is the seed phrase recovery service, and only if you ask us for it: a
       recovery is impossible without the broken phrase, so you share the fragment you still have, knowingly
       and by your own choice. Even then we only ever ask for a phrase that <strong>does not work</strong>,
       never one that does, and never a private key.</p>
 
     <h2>3. Information You Voluntarily Share</h2>
-    <p>To buy a sniper, you message us directly on Telegram. Whatever you choose to share in that
+    <p>To buy Gobli Pro, you message us directly on Telegram. Whatever you choose to share in that
       conversation, your Telegram handle, payment details, and so on, is the only information that
       passes through to us, and only because you chose to send it. We use it solely to arrange payment
       and deliver your setup guide and software.</p>
@@ -83,7 +83,7 @@
       recovery, for you, and it is never sold, shared, or published.</p>
 
     <h2>4. Payments</h2>
-    <p>Payment is made directly on-chain in crypto, arranged with us over Telegram. We
+    <p>Gobli Pro is paid for directly on-chain in crypto, arranged with us over Telegram. We
       never process card numbers or bank details, because we never ask for them. Keep in mind that
       transactions on public blockchains are themselves public and permanent, that's a property of the
       blockchain, not something this site adds.</p>
@@ -96,13 +96,17 @@
       locally and never calls out to a CDN or third-party server. Telegram, which we link to and message
       you through, is an independent third-party platform governed by its own privacy policy, not this
       one.</p>
+    <p>The Software, once it runs on your machine, talks only to the services it needs: Helius (with
+      your own API key), Jupiter, your own Telegram bot, and public price and token-safety sources such as
+      DexScreener, Rugcheck, GoPlus and CoinGecko. Those requests go straight from your machine to them,
+      under their own privacy policies. None of them is ours, and none passes through us.</p>
 
     <h2>6. Cookies</h2>
     <p>This site does not set cookies and does not use local storage to track you across visits.</p>
 
     <h2>7. Data Retention</h2>
-    <p>We don't retain anything beyond the Telegram message you voluntarily send us to claim your
-      download. We don't build a database of customers, wallets, or trading activity, because the
+    <p>We don't retain anything beyond the Telegram messages you voluntarily send us to buy Gobli
+      Pro or to ask a question. We don't build a database of customers, wallets, or trading activity, because the
       self-hosted design means there's nothing here to build it from. Anything you send for a recovery
       attempt is deleted once that attempt is finished, whether or not it succeeded, and you can ask us
       to delete it sooner at any point.</p>
@@ -141,7 +145,6 @@
       <ul class="footer-links">
         <li><a href="/#products">Products</a></li>
         <li><a href="/#services">Services</a></li>
-        <li><a href="/#proof">Proof</a></li>
         <li><a href="how-gobli-works">How It Works</a></li>
         <li><a href="/#faq">Before You Snipe</a></li>
       </ul>
