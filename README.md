@@ -44,7 +44,8 @@ before-you-snipe.html   own link preview (crawlers don't run JS, so without a re
                         consolidates rather than indexing three duplicates, and a
                         JS hand-off to the homepage section via the same sessionStorage key
                         404.html uses.
-index.html              home page: hero, products, services, FAQ, buy popup.
+index.html              home page: hero, products (pricing cards), comparison table, services,
+                        FAQ, buy popup.
                         Carries the site's JSON-LD (@graph: Organization, WebSite, one
                         SoftwareApplication per build (Gobli Free, Gobli Pro), Service,
                         FAQPage).
@@ -60,10 +61,18 @@ terms.html              Legal > Terms
 privacy.html            Legal > Privacy
 disclaimer.html         Legal > Disclaimer
 assets/
-  style.css             shared design system + layout for every page above
+  style.css             shared design system + layout for every page above. The tokens at the
+                        top (colours, type, spacing, radii) are the Gobli design system's dark
+                        theme; see "Design" below.
+  fonts/                Bricolage Grotesque (headlines), Instrument Sans (text), JetBrains Mono
+                        (numbers, handles): variable woff2, latin subset, all SIL OFL. Declared
+                        in style.css; each page preloads the first two.
   home.js               index.html's 3D hero (ES module), with a still-image fallback
   buy.js                index.html's buy popup - separate from home.js so a 3D
-                        failure (no WebGL, three.js download lost) can't break buying
+                        failure (no WebGL, three.js download lost) can't break buying.
+                        The popup's markup holds Gobli Pro's copy as the default; a button
+                        can replace it with data-product / data-price / data-note, and the
+                        two lists with data-steps / data-never ("|"-separated items).
   donate.js             donate.html's QR codes + copy buttons, and the three
                         donation addresses. Bump its ?v= in donate.html whenever an
                         address changes so no browser keeps a stale copy.
@@ -92,12 +101,12 @@ assets/
   og_banner_donate.jpg   one. Both unused since every page moved to a gobli_io* image; kept,
                          not deleted.
   gobli_logo.png         flat brand mark — nav/footer icon
-  gobli_sniper.png       Gobli taking aim down a sniper rifle — card art for Gobli Pro,
-                         on index.html and how-gobli-works.html. Downscaled from a 1024px master
-                         to 480x480 and quantized to a 256-colour palette (~31KB instead of
-                         ~185KB); indistinguishable at the 150px it actually renders at.
-  gobli_auto_sniper.png  Gobli asleep cradling the rifle — card art for Gobli Free, same
-                         two pages, same downscale/quantize treatment.
+  gobli_sniper.png       Gobli taking aim down a sniper rifle — was the card art for Gobli Pro.
+                         Downscaled from a 1024px master to 480x480 and quantized to a 256-colour
+                         palette (~31KB instead of ~185KB). Unused since the pricing-card redesign
+                         (the design system keeps the mascot away from prices); kept.
+  gobli_auto_sniper.png  Gobli asleep cradling the rifle — was the card art for Gobli Free, same
+                         downscale/quantize treatment. Unused for the same reason; kept.
   gobli_seed.png         Gobli hunched over a laptop — art for the seed phrase recovery
                          service on index.html, same downscale/quantize treatment.
   gobli-guide.pdf        The Gobli guide (Free and Pro), linked from how-gobli-works.html.
@@ -132,8 +141,25 @@ archive/                old assets kept for reference, do not deploy
 
 ## No CDN
 
-No CDN is used for any of the above. The **only** external network request the
-page makes is to Google Fonts (Space Grotesk / Inter / JetBrains Mono).
+No CDN is used for any of the above, fonts included: they are self-hosted in
+`assets/fonts/`. No page makes a request to any other origin.
+
+## Design
+
+The look follows the Gobli design system made in Claude Design (the "Gobli"
+artifact on claude.ai): its tokens are the `:root` block of `style.css`, and the
+homepage's hero, pricing cards, comparison table, badges, buttons and icons are
+static-HTML versions of its components. A few rules from it worth keeping:
+
+- One goblin-green primary button per view; gold (`btn-gold`, `badge-gold`, the
+  Pro card's border) belongs to Gobli Pro only.
+- Icons are inline SVGs with `class="icon"` and a 24px viewBox; style.css gives
+  them the 1.75 stroke and round caps. Their colour comes from the parent.
+- Numbers, prices, handles and hashes go in `mono`.
+- Colour never carries meaning alone: every red line has an x icon, every
+  green one a check.
+
+The design system also defines a light theme; the site ships dark only.
 
 ## Deployment
 
@@ -172,6 +198,10 @@ default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://
 
 `style-src` keeps `'unsafe-inline'` on purpose: the markup uses `style=""`
 attributes throughout, and inline CSS can't run code.
+
+The two Google Fonts origins in it (`fonts.googleapis.com`, `fonts.gstatic.com`)
+are no longer used now that the fonts are self-hosted. Leaving them is harmless;
+dropping them from the Cloudflare rule tightens it.
 
 **Cloudflare SSL mode stays "Full", not "Full (strict)".** GitHub has not issued
 a certificate for gobli.io: it checks that the domain resolves to GitHub's IPs,
