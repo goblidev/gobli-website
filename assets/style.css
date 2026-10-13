@@ -383,8 +383,11 @@ body{
 /* ===================== Free vs Pro vs hosted bots (home) ===================== */
 .compare{padding:56px 0}
 .compare-wrap{max-width:900px;margin-inline:auto;overflow-x:auto;background:var(--bg-panel2);
-  border:2px solid var(--green);box-shadow:7px 7px 0 var(--purple)}
-/* four columns need ~600px; narrower screens scroll the table sideways, row labels stay put */
+  border:2px solid var(--green);box-shadow:7px 7px 0 var(--purple);
+  transition:transform .12s ease, box-shadow .12s ease}
+/* same lift as the product and service cards */
+.compare-wrap:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--purple)}
+/* four columns need ~600px; below 620px the table stacks instead (see the media query below) */
 .compare-table{width:100%;min-width:600px;border-collapse:collapse;font-size:.9rem;line-height:1.5}
 .compare-table caption{position:absolute;left:-9999px}
 .compare-table th,.compare-table td{padding:13px 18px;border-bottom:1px solid var(--green-deep);
@@ -405,8 +408,6 @@ body{
 .compare-table .good .icon{color:var(--green-soft)}
 .compare-table .bad .icon{color:var(--danger)}
 .compare-table .neutral .icon{color:var(--bone-dim)}
-.compare-src{max-width:900px;margin:20px auto 0;text-align:center;font-family:var(--font-mono);
-  font-size:.72rem;color:var(--bone-dim)}
 .compare-table thead th{width:26%}
 /* phones: each row becomes a block, one line per build, labelled from the cell's data-col */
 @media (max-width:620px){
