@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=18">
+<link rel="stylesheet" href="assets/style.css?v=20">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -272,13 +272,23 @@
     </div>
 
     <h1 id="hero-heading">Your rules.<br>My trigger.<span class="hero-sub">Self-hosted Solana sniper bot</span></h1>
-    <p class="lede">A synthetic goblin who eats token launches in under 500ms. Paste one in yourself, or set
-      the rules and let me hunt them down without you. Try me free, go Pro when you've seen enough.
-      Self-hosted, either way. Your keys never leave your machine. I wouldn't want them anyway.</p>
+    <p class="lede">Paste a mint and Gobli buys in under 500ms, or set rules and let it hunt launches for you.
+      It runs on your machine, so your keys never leave it.</p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="#products">Put me to work</a>
-      <a class="btn btn-ghost" href="https://t.me/goblivillage" target="_blank" rel="noopener">Join the Telegram</a>
+      <a class="btn btn-primary" href="assets/gobli-free.zip" download>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Download Gobli Free
+      </a>
+      <!-- No data- copy: the buy popup's defaults are Gobli Pro's. -->
+      <button class="btn btn-ghost" type="button" data-open-drawer>Get Pro &middot; $199 once</button>
     </div>
+    <ul class="hero-trust" aria-label="How Gobli protects you">
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Keys stay on your machine</li>
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Self-hosted</li>
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>Full source included</li>
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Starts in paper mode</li>
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9M18.4 6.6a9 9 0 1 1-12.8 0"/></svg>Kill switch</li>
+    </ul>
   </div>
 </section>
 
@@ -299,19 +309,21 @@
         </div>
         <span class="card-kicker">Free</span>
         <h3>Gobli Free</h3>
-        <p class="price">$0</p>
-        <p class="desc">Both snipers on a short leash. Paste a contract or set one rule, watch me work in paper
-          mode without even giving me a key, then trade for real. No fee, no cut, no catch.</p>
+        <p class="price">$0<span class="price-cad">forever</span></p>
+        <p class="desc">Learn the workflow with zero risk.</p>
         <ul class="specs">
-          <li>Manual + Auto in one bot</li>
-          <li>Paper mode, no private key needed</li>
-          <li>Up to 3 open positions</li>
-          <li>One auto rule at a time</li>
-          <li>Full source included</li>
-          <li>Self-hosted</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Manual + Auto in one bot</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paper mode, no private key needed</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 3 open positions</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One auto rule at a time</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Routes through Jupiter</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source included, self-hosted</li>
         </ul>
         <div class="card-cta">
-          <a class="btn btn-primary" style="width:100%" href="assets/gobli-free.zip" download>Download free</a>
+          <a class="btn btn-primary" style="width:100%" href="assets/gobli-free.zip" download>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Download free
+          </a>
         </div>
       </article>
 
@@ -322,28 +334,76 @@
         </div>
         <span class="card-kicker">Pro</span>
         <h3>Gobli Pro</h3>
-        <p class="price">$199</p>
-        <p class="desc">Paste a contract and I buy it in under 500ms, or write the rules and I hunt launches
-          without you. Both at once, full speed, with hard caps on what the auto side may spend.</p>
+        <p class="price">$199<span class="price-cad">one-time</span></p>
+        <p class="desc">Both snipers at once. No caps. Staked broadcast.</p>
         <ul class="specs">
-          <li>Manual + Auto, side by side</li>
-          <li>Paste a mint, buy in under 500ms</li>
-          <li>Direct pump.fun buys + Jupiter</li>
-          <li>Helius Sender (staked broadcast)</li>
-          <li>Rules, risk caps, kill switch, PnL cards</li>
-          <li>Full source, self-hosted</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Manual + Auto, side by side</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paste a mint, buy in under 500ms</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Direct pump.fun buys + Jupiter</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Helius Sender (staked broadcast)</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rules, risk caps, kill switch, PnL cards</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source, self-hosted</li>
         </ul>
         <div class="card-cta">
-          <button class="btn btn-primary" style="width:100%" type="button"
-            data-open-drawer
-            data-product="Gobli Pro"
-            data-price="$199 once &middot; message us to buy"
-            data-note="Tell me you want Gobli Pro and I'll get you sorted. No forms, no waiting on a support ticket.">
-            Go Pro
-          </button>
+          <!-- No data- copy: the buy popup's defaults are Gobli Pro's. -->
+          <button class="btn btn-primary" style="width:100%" type="button" data-open-drawer>Get Pro</button>
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ===================== COMPARISON ===================== -->
+<section class="compare" id="compare" aria-labelledby="compare-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The math</p>
+      <h2 id="compare-heading">$199 once beats 1% forever</h2>
+      <p>Fee-based bots look free until you add up the trades. At 1% a trade, Pro pays for itself after
+        $19,900 of volume.</p>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <caption>Gobli Pro compared with a typical hosted Telegram bot</caption>
+        <thead>
+          <tr><td></td><th scope="col" class="is-us">Gobli Pro</th><th scope="col">Typical hosted bot</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Who holds your key</th>
+            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>You, on your machine</span></td>
+            <td class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Generated and held by the bot</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Fee per trade</th>
+            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None</span></td>
+            <td class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>About 1% of every buy and sell</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$199 once, lifetime updates</span></td>
+            <td class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free to start</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Source code</th>
+            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source included</span></td>
+            <td class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Closed</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Setup</th>
+            <td class="is-us neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>You run it, with a step-by-step guide</span></td>
+            <td class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None, start in chat</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Uptime</th>
+            <td class="is-us neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>Yours to manage (PC or VPS)</span></td>
+            <td class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Managed for you</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-src">Hosted-bot fees: published schedules of Trojan, BONKbot, Photon and GMGN, 2026.</p>
   </div>
 </section>
 
@@ -370,17 +430,17 @@
           <div class="service-list can">
             <h4>Can work with</h4>
             <ul>
-              <li>1&ndash;3 missing words</li>
-              <li>Wrong order, or a typo</li>
-              <li>4+ words, if you have clues</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>1&ndash;3 missing words</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Wrong order, or a typo</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4+ words, if you have clues</li>
             </ul>
           </div>
           <div class="service-list cant">
             <h4>Can't fix</h4>
             <ul>
-              <li>4+ words, no clues</li>
-              <li>No phrase at all</li>
-              <li>Not your wallet</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>4+ words, no clues</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>No phrase at all</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Not your wallet</li>
             </ul>
           </div>
         </div>
@@ -390,8 +450,7 @@
             data-open-drawer
             data-product="Seed Phrase Recovery"
             data-price="10&ndash;25% of what I recover &middot; nothing upfront"
-            data-note="Tell me what's left of the phrase and what's missing. Every case is different, so ask, and I'll tell you straight whether it's worth trying."
-            data-trust="Everything runs under a digital contract agreed before I start. I will never message you first, never ask for a phrase that still works, and never ask you to send funds anywhere. Nothing is owed unless the wallet opens.">
+            data-trust="Contract first, nothing owed unless the wallet opens. We never DM first or ask for a phrase that still works.">
             Ask about your case
           </button>
           <p class="service-note">Every case is different, so ask. <strong>Nothing upfront</strong>, paid from
@@ -586,13 +645,17 @@
 <div class="drawer-overlay" id="drawerOverlay">
   <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" id="drawer">
     <button class="drawer-close" id="drawerClose" type="button" aria-label="Close">&times;</button>
-    <h2 id="drawerTitle">Snipe with Gobli</h2>
-    <p class="drawer-sub" id="drawerSub">message us to buy</p>
-    <p class="after-note" id="drawerNote">Tell me what you're after and I'll get you sorted. No forms, no
-      waiting on a support ticket.</p>
-    <a class="btn btn-primary" style="width:100%;margin-bottom:18px" href="https://t.me/goblidev" target="_blank" rel="noopener">Message us on Telegram</a>
-    <p class="trust-note" id="drawerTrust">Gobli is self-hosted software. We will never DM you first, never
-      ask for your seed phrase, never ask you to import a wallet.</p>
+    <!-- The copy here is Gobli Pro's, the default. A button's data-product /
+         data-price / data-note / data-trust replace it; the note is empty, and
+         hidden, unless a button sets one. -->
+    <h2 id="drawerTitle">Gobli Pro</h2>
+    <p class="drawer-sub" id="drawerSub">$199 once &middot; pay in SOL, ETH or BTC</p>
+    <p class="after-note" id="drawerNote"></p>
+    <a class="btn btn-primary" style="width:100%;margin-bottom:18px" href="https://t.me/goblidev" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14M21 3l-7 18-4-8-8-4 19-6z"/></svg>
+      Message us on Telegram
+    </a>
+    <p class="trust-note" id="drawerTrust">Only @goblidev sells Gobli. We never DM first or ask for your seed phrase.</p>
   </div>
 </div>
 
