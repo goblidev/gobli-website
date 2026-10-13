@@ -44,8 +44,9 @@ before-you-snipe.html   own link preview (crawlers don't run JS, so without a re
                         consolidates rather than indexing three duplicates, and a
                         JS hand-off to the homepage section via the same sessionStorage key
                         404.html uses.
-index.html              home page: hero, products, Gobli Pro vs hosted-bot comparison,
-                        services, FAQ, buy popup.
+index.html              home page: hero, products, a Free vs Pro vs hosted-bot comparison
+                        table (stacks into one block per row on phones, labelled from each
+                        cell's data-col), services, FAQ, buy popup.
                         Carries the site's JSON-LD (@graph: Organization, WebSite, one
                         SoftwareApplication per build (Gobli Free, Gobli Pro), Service,
                         FAQPage).

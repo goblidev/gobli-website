@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20">
+<link rel="stylesheet" href="assets/style.css?v=21">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -312,12 +312,13 @@
         <p class="price">$0<span class="price-cad">forever</span></p>
         <p class="desc">Learn the workflow with zero risk.</p>
         <ul class="specs">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Manual + Auto in one bot</li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paper mode, no private key needed</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Manual + Auto, one mode at a time</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Live trading, paper mode to test</li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 3 open positions</li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One auto rule at a time</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One auto rule</li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Routes through Jupiter</li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source included, self-hosted</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source included</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Self-hosted</li>
         </ul>
         <div class="card-cta">
           <a class="btn btn-primary" style="width:100%" href="assets/gobli-free.zip" download>
@@ -337,12 +338,13 @@
         <p class="price">$199<span class="price-cad">one-time</span></p>
         <p class="desc">Both snipers at once. No caps. Staked broadcast.</p>
         <ul class="specs">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Manual + Auto, side by side</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Manual + Auto, both at once</li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paste a mint, buy in under 500ms</li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Direct pump.fun buys + Jupiter</li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Helius Sender (staked broadcast)</li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rules, risk caps, kill switch, PnL cards</li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source, self-hosted</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source included</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Self-hosted</li>
         </ul>
         <div class="card-cta">
           <!-- No data- copy: the buy popup's defaults are Gobli Pro's. -->
@@ -359,46 +361,62 @@
     <div class="section-head">
       <p class="eyebrow">The math</p>
       <h2 id="compare-heading">$199 once beats 1% forever</h2>
-      <p>Fee-based bots look free until you add up the trades. At 1% a trade, Pro pays for itself after
-        $19,900 of volume.</p>
+      <p>Hosted bots look free until you add up the 1% they take on every trade.</p>
     </div>
 
     <div class="compare-wrap">
       <table class="compare-table">
-        <caption>Gobli Pro compared with a typical hosted Telegram bot</caption>
+        <caption>Gobli Free and Gobli Pro compared with a typical hosted Telegram bot</caption>
         <thead>
-          <tr><td></td><th scope="col" class="is-us">Gobli Pro</th><th scope="col">Typical hosted bot</th></tr>
+          <tr>
+            <td></td>
+            <th scope="col">Gobli Free</th>
+            <th scope="col" class="is-us">Gobli Pro</th>
+            <th scope="col">Hosted bots</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Who holds your key</th>
-            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>You, on your machine</span></td>
-            <td class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Generated and held by the bot</span></td>
+            <th scope="row">Price</th>
+            <td data-col="Free" class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0</span></td>
+            <td data-col="Pro" class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$199 once</span></td>
+            <td data-col="Hosted" class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free to start</span></td>
           </tr>
           <tr>
             <th scope="row">Fee per trade</th>
-            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None</span></td>
-            <td class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>About 1% of every buy and sell</span></td>
+            <td data-col="Free" class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None</span></td>
+            <td data-col="Pro" class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None</span></td>
+            <td data-col="Hosted" class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>About 1% of every trade</span></td>
           </tr>
           <tr>
-            <th scope="row">Price</th>
-            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$199 once, lifetime updates</span></td>
-            <td class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free to start</span></td>
+            <th scope="row">Your private key</th>
+            <td data-col="Free" class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Stays with you</span></td>
+            <td data-col="Pro" class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Stays with you</span></td>
+            <td data-col="Hosted" class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Held by the bot</span></td>
           </tr>
           <tr>
             <th scope="row">Source code</th>
-            <td class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full source included</span></td>
-            <td class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Closed</span></td>
+            <td data-col="Free" class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Included</span></td>
+            <td data-col="Pro" class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Included</span></td>
+            <td data-col="Hosted" class="bad"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Closed</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Manual + Auto</th>
+            <td data-col="Free" class="neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>One mode at a time</span></td>
+            <td data-col="Pro" class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Both at once</span></td>
+            <td data-col="Hosted" class="na"><span class="cell" aria-label="Not compared">&mdash;</span></td>
+          </tr>
+          <tr>
+            <th scope="row">How it buys</th>
+            <td data-col="Free" class="neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>Through Jupiter</span></td>
+            <td data-col="Pro" class="is-us good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Direct pump.fun + Helius Sender</span></td>
+            <td data-col="Hosted" class="na"><span class="cell" aria-label="Not compared">&mdash;</span></td>
           </tr>
           <tr>
             <th scope="row">Setup</th>
-            <td class="is-us neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>You run it, with a step-by-step guide</span></td>
-            <td class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None, start in chat</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Uptime</th>
-            <td class="is-us neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>Yours to manage (PC or VPS)</span></td>
-            <td class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Managed for you</span></td>
+            <td data-col="Free" class="neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>You run it (PC or VPS)</span></td>
+            <td data-col="Pro" class="is-us neutral"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>You run it (PC or VPS)</span></td>
+            <td data-col="Hosted" class="good"><span class="cell"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>None, start in chat</span></td>
           </tr>
         </tbody>
       </table>
@@ -413,22 +431,24 @@
     <div class="section-head">
       <p class="eyebrow">Services</p>
       <h2 id="services-heading">Locked out of your own wallet?</h2>
+      <p>A few words short of a seed phrase? I grind the combinations until one opens it.</p>
     </div>
 
-    <article class="service-card">
+    <article class="service-card" aria-labelledby="seed-heading">
       <img class="service-art" src="assets/gobli_seed.png?v=2" alt="Gobli hunched over a laptop, working through a seed phrase" width="480" height="480" loading="lazy" decoding="async">
 
       <div class="service-body">
-        <div class="service-head">
-          <h3>Seed Phrase Recovery</h3>
-          <p class="service-price">10&ndash;25% <span>of what I recover</span></p>
-        </div>
+        <h3 id="seed-heading">Seed Phrase Recovery</h3>
 
-        <p class="desc">A few words short of a seed phrase? I grind the combinations until one opens it.</p>
+        <ul class="service-terms">
+          <li><strong>10&ndash;25%</strong><span>of what I recover</span></li>
+          <li><strong>$0</strong><span>upfront</span></li>
+          <li><strong>$0</strong><span>if it fails</span></li>
+        </ul>
 
         <div class="service-lists">
           <div class="service-list can">
-            <h4>Can work with</h4>
+            <h4>Can help</h4>
             <ul>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>1&ndash;3 missing words</li>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Wrong order, or a typo</li>
@@ -436,7 +456,7 @@
             </ul>
           </div>
           <div class="service-list cant">
-            <h4>Can't fix</h4>
+            <h4>Can't help</h4>
             <ul>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>4+ words, no clues</li>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>No phrase at all</li>
@@ -445,17 +465,13 @@
           </div>
         </div>
 
-        <div class="service-foot">
-          <button class="btn btn-primary" type="button"
-            data-open-drawer
-            data-product="Seed Phrase Recovery"
-            data-price="10&ndash;25% of what I recover &middot; nothing upfront"
-            data-trust="Contract first, nothing owed unless the wallet opens. We never DM first or ask for a phrase that still works.">
-            Ask about your case
-          </button>
-          <p class="service-note">Every case is different, so ask. <strong>Nothing upfront</strong>, paid from
-            what I recover, under a contract we agree first.</p>
-        </div>
+        <button class="btn btn-primary" type="button"
+          data-open-drawer
+          data-product="Seed Phrase Recovery"
+          data-price="10&ndash;25% of what I recover &middot; nothing upfront"
+          data-trust="Contract first, nothing owed unless the wallet opens. We never DM first or ask for a phrase that still works.">
+          Ask about your case
+        </button>
       </div>
     </article>
   </div>
